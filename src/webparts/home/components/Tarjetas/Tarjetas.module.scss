@@ -1,0 +1,106 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "../../../../scss/Index.module.scss";
+
+.Tarjetas {
+  @include ms-Grid;
+  padding: 0;
+
+  &_Row {
+    @include ms-Grid-row;
+
+    &_User {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      display: flex;
+      align-items: center;
+
+      &_Id {
+        text-align: center;
+        display: inline-block;
+        @include ms-fontSize-12;
+        background-color: $ms-color-themeDarkAlt;
+        border-radius: 20px;
+        padding: 1px 6px;
+        color: $ms-color-white;
+        margin-right: 10px;
+      }
+
+      &_Return {
+        font-family: DIN, Arial, sans-serif;
+        @include ms-fontSize-14;
+        cursor: pointer;
+        color: $ms-color-themeDarkAlt;
+        margin-right: 15px;
+        border-right: 1px solid $ms-color-themeDarkAlt;
+        padding-right: 15px;
+      }
+
+      &_Text {
+        text-align: left;
+        @include ms-fontSize-12;
+      }
+    }
+
+    &_Title {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      text-align: left;
+      padding: 0;
+      padding-bottom: 20px;
+
+      &_Text {
+        @include ms-fontSize-42;
+        font-weight: 300;
+        color: $ms-color-black;
+      }
+
+      &_Description {
+        font-weight: 300;
+        color: $ms-color-neutralTertiary;
+        @include ms-fontSize-32;
+      }
+    }
+
+    &_Tarjeta {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      padding: 0;
+
+      &_Container {
+        @include ms-Grid;
+
+        &_Row {
+          @include ms-Grid-row;
+
+          &_Box {
+            @include ms-Grid-col;
+            @include ms-sm12;
+            @include ms-md6;
+            padding-right: 22px;
+            padding-bottom: 25px;
+          }
+        }
+      }
+    }
+
+    @include ms-screen-sm-down {
+      &_User {
+        padding: 15px 15px 0;
+      }
+
+      &_Tarjeta {
+        &_Container {
+          padding: 0 15px;
+
+          &_Row {
+            &_Box {
+              padding-right: 8px;
+              padding-bottom: 18px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

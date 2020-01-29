@@ -1,0 +1,70 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "../../../scss/Index.module.scss";
+
+.Home {
+
+  background-position: center 0;
+  background-repeat: no-repeat;
+
+  &_Container {
+    @include Container;
+  }
+
+  &_Row {
+    @include ms-Grid-row;
+
+    &_ColLeft {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      @include ms-xl7;
+      @include ms-xxl6;
+    }
+
+    &_ColRight {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      @include ms-xl5;
+      @include ms-xxl6;
+    }
+  }
+
+
+  // MEDIA QUERIES
+
+  @include ms-screen-xl-up {
+    background-size: 1015px;
+  }
+
+  @include ms-screen-xxl-up {
+    background-size: 1305px;
+  }
+
+  @include ms-screen-lg-down {
+    background: none !important;
+  }
+
+}
+
+// ESTILOS COMPONENTE RECORDATORIO
+
+.contenedorRecordatorio {
+  @include ms-Grid-col;
+  @include ms-sm12;
+  padding: 15px 7px 30px;
+}
+
+@include ms-screen-lg-up {
+  padding: 30px 0 30px;
+}
+
+@include ms-screen-xl-up {
+  .contenedorRecordatorio {
+    padding: 420px 0 30px;
+  }
+}
+
+@include ms-screen-xxl-up {
+  .contenedorRecordatorio {
+    padding: 515px 0 30px 90px;
+  }
+}

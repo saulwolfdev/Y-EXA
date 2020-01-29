@@ -1,0 +1,85 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+// Reset
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%!important;
+    min-height: 100%!important;
+    box-sizing: border-box!important;
+}
+
+a,
+button {
+    transition: all 0.3s ease-out;
+    text-decoration: none;
+}
+
+//FONTS
+@font-face {
+    font-family: 'DIN';
+    src: url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Bold.woff2') format('woff2'),
+        url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Regular.woff2') format('woff2'),
+        url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Light.woff2') format('woff2'),
+        url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Black.woff2') format('woff2'),
+        url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN';
+    src: url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Medium.woff2') format('woff2'),
+        url('https://ypf.sharepoint.com/:u:/r/sites/FormacionExternaEIdiomas-Test/SiteAssets/fonts/DIN-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+input:not([type])[disabled],
+input[type=email][disabled],
+input[type=file][disabled],
+input[type=password][disabled],
+input[type=text][disabled],
+select[disabled],
+textarea[disabled] {
+    color: rgb(166, 166, 166);
+}
+
+body {
+    font-family: 'DIN', Arial, sans-serif !important;
+    background: $ms-color-white;
+}
+

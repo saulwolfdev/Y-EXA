@@ -1,0 +1,72 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "../../../../scss//Index.module.scss";
+
+.Card {
+  @include Card;
+  width: 100%;
+  height: 175px;
+  padding: 25px 30px;
+  cursor: pointer;
+  display: table;
+  transition: all 0.3s ease-out;
+
+  &_Container {
+    display: table-cell;
+    vertical-align: bottom;
+
+    &_Icon {
+      position: absolute;
+      top: 0px;
+      right: 22px;
+
+      &_img {
+        width: 134px;
+        transition: all 0.3s ease-out;
+      }
+    }
+
+    &_Title {
+      width: 157px;
+
+      &_Text {
+        font-size: 22px;
+        line-height: 24px;
+        color: $ms-color-themeDarkAlt;
+        @include ms-fontWeight-semibold;
+      }
+    }
+  }
+
+  @include ms-screen-sm-down {
+    &_Container {
+      &_Icon {
+        right: 8px;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 34px rgba(0, 0, 0, .4);
+
+    .Card_Container_Icon_img {
+      width: 137px;
+    }
+  }
+
+}
+
+.CardClicked {
+  @extend .Card;
+  background-color: $ms-color-themeDarkAlt;
+  box-shadow: 0 0 34px rgba(0, 0, 0, .6);
+}
+
+.TitleClicked {
+  @extend .Card_Container_Title_Text;
+  color: #fff;
+}
+
+.CardPanel {
+  text-align: inherit;
+  @include Global;
+}

@@ -1,0 +1,112 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+
+// Container con anchos maximos similares a bootstrap
+
+@mixin Container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include ms-screen-lg-up {
+    width: 620px;
+  }
+
+  @include ms-screen-xl-up {
+    width: 970px;
+  }
+
+  @include ms-screen-xxl-up {
+    width: 1250px;
+  }
+}
+
+// Cards con borde y sombra
+
+@mixin Card {
+  box-shadow: 0 0 34px rgba(0, 0, 0, .175);
+  background-color: $ms-color-white;
+  border-radius: 10px;
+}
+
+@mixin Global {
+  :global(.ms-Panel-main) {
+    width: 100% !important;
+
+    @include ms-screen-md-up {
+      width: 100% !important;
+    }
+
+    @include ms-screen-lg-up {
+      width: 600px !important;
+    }
+
+    @include ms-screen-xl-up {
+      width: 600px !important;
+    }
+
+    @include ms-screen-xxl-up {
+      width: 600px !important;
+    }
+
+  }
+
+  :global(.ms-Panel-navigation) {
+    background-color: $ms-color-neutralLighter;
+    position: relative;
+    z-index: 200;
+  }
+
+  :global(.ms-Panel-header) {
+    background-color: $ms-color-neutralLighter;
+    font-family: 'DIN', Arial, sans-serif !important;
+    margin: 0;
+    position: relative;
+    z-index: 200;
+  }
+
+  :global(.ms-Panel-headerText) {
+    background-color: $ms-color-neutralLighter;
+    font-family: 'DIN', Arial, sans-serif !important;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+    @include ms-fontSize-20;
+    color: $ms-color-themeDarkAlt;
+    font-weight: 400;
+	@include ms-screen-md-up {
+	 @include ms-fontSize-24;
+	  padding-bottom: 15px;
+	}
+	@include ms-screen-md-up {
+		  @include ms-fontSize-32;
+		   padding-bottom: 30px;
+	}
+  }
+
+  :global(.ms-Panel-content) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  :global(.ms-Panel-footerInner) {
+    background-color: #fff;
+    position: relative;
+    z-index: 300;
+  }
+}
+@mixin  Input {
+	   text-align: left;
+	  :global(.ms-Label){
+	  font-family: 'DIN', Arial, sans-serif;
+	  text-transform: uppercase;
+	  color:$ms-color-neutralTertiary;
+	   margin: 11px 0;
+  }
+}
+@mixin Checkbox {
+	 text-align: left;
+	:global(.ms-Checkbox-text){
+      font-family: 'DIN', Arial, sans-serif;
+	}
+}

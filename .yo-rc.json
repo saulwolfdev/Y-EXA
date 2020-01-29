@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": false,
+    "environment": "spo",
+    "version": "1.7.1",
+    "libraryName": "yshare",
+    "libraryId": "1ec71bd5-1ff4-4171-92e5-d2a2f384a573",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}

@@ -1,0 +1,130 @@
+/* Reseteo del WorkBench */
+
+#workbenchPageContent {
+  max-width: 100% !important;
+  border-width: 0 !important;
+  right: 0 !important;
+  left: 0 !important;
+}
+
+.CanvasZone {
+  max-width: none;
+}
+
+.CanvasZone.CanvasZone--edit {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.ControlZoneEmphasisBackground {
+  padding: 0px !important;
+  background: transparent;
+}
+
+.ControlZone.ControlZone--selected:after {
+  border-width: 0 !important;
+}
+
+.content_7b590e14 {
+  padding: 0px !important;
+}
+
+.workbench_a2454af4 {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* ///////////////////////////////// */
+div[class^="sideActionsWrapper-"] {
+  display: none !important;
+}
+
+div[class^="commandBarWrapper"] {
+  display: none !important;
+}
+
+div[class^="actionsSubcell-"] {
+  display: none !important;
+}
+
+div[class^="searchCell-"] {
+  display: none !important;
+}
+
+div[class^="searchBoxContainer"] {
+  display: none !important;
+}
+
+button[class^="chevronButton-"] {
+  display: none !important;
+}
+
+.navArbol button::after {
+  display: none;
+}
+
+div[class^="content"] {
+  padding: 0 !important;
+}
+
+div[class^="CanvasZone"] {
+  padding: 0 !important;
+}
+
+div[class^="ControlZoneEmphasisBackground"] {
+  padding: 0 !important;
+}
+
+div[class^="CanvasSection-col"] {
+  padding: 0 !important;
+}
+
+div[class^=".CanvasSection-sm12"] {
+  padding: 0 !important;
+}
+
+div[class^=".root-61"] {
+  padding: 0 !important;
+}
+
+[dir=ltr] .CanvasSection-col {
+  padding: 0 !important;
+}
+
+div[class^="CanvasZoneToolbar"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: azure;
+  z-index: 10000;
+}
+
+div[class^="ControlZone"] {
+  padding: 0 !important;
+}
+
+div[class^="Canvas"] {
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+
+div[id^="workbenchPageContent"] {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  font-family: 'DIN', Arial, sans-serif !important;
+}
+
+div[class^="pageContent"] {
+  padding: 0 !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  right: 0 !important;
+  left: 0 !important;
+}
+
+:global(.pageContent) {
+  right: 0 !important;
+  left: 0 !important;
+  border: 1px solid rebeccapurple !important;
+}

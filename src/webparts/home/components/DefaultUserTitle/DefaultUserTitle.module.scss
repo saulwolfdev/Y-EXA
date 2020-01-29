@@ -1,0 +1,56 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "../../../../scss/Index.module.scss";
+
+.DefaultUserTitle {
+    &_Row {
+        @include ms-Grid-row;
+
+        &_Title {
+            @include ms-Grid-col;
+            @include ms-sm12;
+            color: $ms-color-black;
+
+            &_Text {
+                @include ms-fontSize-42;
+                margin: 15px 0;
+                font-weight: 400;
+                text-transform: capitalize;
+            }
+
+            &_Description {
+                @include ms-fontSize-28;
+                margin-bottom: 30px;
+                font-weight: 300;
+            }
+        }
+
+        @include ms-screen-xxl-up {
+            &_Title {
+
+                &_Text {
+                    font-size: 56px;
+                    margin: 20px 0;
+                }
+    
+                &_Description {
+                    @include ms-fontSize-32;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+
+        @include ms-screen-sm-down {
+            &_Title {
+                padding: 0 15px;
+
+                &_Text {
+                    @include ms-fontSize-32;
+                }
+
+                &_Description {
+                    @include ms-fontSize-24;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import "../../../../scss/Index.module.scss";
+
+.Checkbox {
+  width: 100%;
+  font-family: 'DIN', Arial, sans-serif;
+
+  &_Inputs {
+    @include ms-Grid;
+    padding: 0;
+
+    &_CheckBox {
+      @include ms-Grid-col;
+      @include ms-lg12;
+      padding: 0;
+
+      &_Container {
+        @include ms-Grid;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px;
+        padding-left: 0;
+        &_CheckBox {
+          @include ms-Grid-col;
+          @include ms-lg3;
+
+        }
+
+        &_DropBox {
+          @include ms-Grid-col;
+          @include ms-lg9;
+
+          &_Drop {
+            @include ms-Grid-col;
+            @include ms-lg6;
+          }
+        }
+
+      @include ms-screen-md-up {
+        justify-content: center;
+        align-items: center;
+      }
+	        @include ms-screen-lg-up {
+        justify-content: center;
+        align-items: center;
+      }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import "../../../scss/Index.module.scss";
+
+.recordatorio {
+  background-repeat: no-repeat;
+
+  &.formaUno,
+  &.formaDos {
+    padding: 20px;
+    width: auto;
+    height: auto;
+    background-image: none;
+    background-color: $ms-color-themeDarkAlt;
+  }
+
+  &_container {
+    display: table;
+
+    &_containerImg {
+      display: table-cell;
+      vertical-align: middle;
+
+      &_img {
+        height: 50px;
+        margin-right: 13px;
+      }
+    }
+
+    &_text {
+      display: table-cell;
+      vertical-align: middle;
+      color: $ms-color-white;
+      line-height: 17px;
+      padding-top: 0;
+    }
+  }
+
+  @include ms-screen-lg-up {
+    &.formaUno {
+      padding: 35px 36px 0 68px;
+      width: 399px;
+      height: 144px;
+      background-color: transparent;
+    }
+
+    &.formaDos {
+      padding: 35px 74px 0 43px;
+      width: 382px;
+      height: 141px;
+      background-color: transparent;
+    }
+
+    &_container {
+      &_text {
+        padding-top: 5px;
+      }
+    }
+  }
+
+  @include ms-screen-xxl-up {
+    &.formaUno {
+      padding: 47px 73px 0 83px;
+      width: 456px;
+      height: 169px;
+    }
+
+    &.formaDos {
+      padding: 44px 119px 0px 66px;
+      width: 456px;
+      height: 169px;
+    }
+  }
+}

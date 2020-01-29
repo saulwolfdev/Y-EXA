@@ -1,0 +1,217 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import "../../../../scss/Index.module.scss";
+
+.Form {
+  width: 100%;
+  font-family: 'DIN', Arial, sans-serif;
+
+  &_Titles {
+    @include ms-Grid;
+
+    &_Cont {
+      @include ms-Grid-row;
+
+      &_Line {
+        text-align: left;
+
+        &:after {
+          content: "";
+          width: 0;
+          height: 100%;
+          display: none;
+          position: absolute;
+          border-left: 1px solid #106ebe;
+          top: 0;
+          left: 60px;
+          display: none !important;
+
+          @include ms-screen-md-up {
+            display: none !important;
+          }
+
+          @include ms-screen-lg-up {
+            display: block !important;
+          }
+        }
+
+        &_Stepper {
+          @include ms-Grid-row;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+
+          &_Step {
+            position: relative;
+            z-index: 2000;
+            background-color: #fff;
+            padding-top: 20px;
+            @include ms-Grid-col;
+            display: none;
+
+            @include ms-screen-md-up {
+              display: none;
+            }
+
+            @include ms-screen-lg-up {
+              @include ms-Grid-col;
+              @include ms-md2;
+              @include ms-lg2;
+              @include ms-xl2;
+              display: block;
+            }
+
+            &_Box {
+              margin: 0 auto;
+              background-color: $ms-color-themeDarkAlt;
+              width: 46px;
+              height: 46px;
+              border-radius: 50px;
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              align-content: center;
+              z-index: 300;
+
+              &_Text {
+                @include ms-fontSize-20;
+                font-weight: 300;
+                color: #fff;
+              }
+            }
+
+          }
+
+          &_Title {
+            @include ms-Grid-col;
+            @include ms-sm12;
+            @include ms-md12;
+            @include ms-lg10;
+            @include ms-xl10;
+            position: relative;
+            z-index: 2000;
+            background-color: #fff;
+            padding-top: 20px;
+
+            &_Text {
+              color: $ms-color-themeDarkAlt;
+              font-weight: 400;
+              @include ms-fontSize-20;
+
+            }
+          }
+        }
+      }
+    }
+
+    &_Inputs {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      @include Input;
+
+      &_Label {
+        @include Input;
+        margin: 11px 0 !important;
+        color: $ms-color-neutralTertiary !important;
+      }
+
+      &_Checkbox {
+        padding: 10px;
+        padding-left: 0;
+        @include Checkbox;
+      }
+
+      @include ms-screen-md-up {
+        @include ms-sm12;
+      }
+
+      @include ms-screen-lg-up {
+        @include ms-md10;
+        @include ms-lg10;
+        @include ms-xl10;
+        @include ms-smPush2;
+      }
+    }
+  }
+
+  &_Time {
+    @include ms-Grid;
+
+    &_Duration {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      @include Input;
+
+      &_Lapse {
+        @include ms-Grid-col;
+        @include ms-sm12;
+        @include ms-md12;
+        @include ms-lg12;
+        @include Input;
+      }
+
+      &_Coin {
+        @include ms-Grid-col;
+        @include ms-sm12;
+        @include ms-md12;
+        @include ms-lg6;
+        @include ms-xl6;
+        @include Input;
+      }
+
+      &_Value {
+        @include ms-Grid-col;
+        @include ms-sm12;
+        @include ms-md12;
+        @include ms-lg6;
+        @include ms-xl6;
+        @include Input;
+      }
+
+      @include ms-screen-md-up {
+        @include ms-sm12;
+      }
+
+      @include ms-screen-lg-up {
+        @include ms-md10;
+        @include ms-lg10;
+        @include ms-xl10;
+        @include ms-smPush2;
+      }
+    }
+  }
+
+  &_Objetivo {
+    background-color: #fff;
+    width: 100%;
+
+    &_Container {
+      @include ms-Grid;
+		padding: 0;
+      &_Description {
+        @include ms-Grid-col;
+        @include ms-sm12;
+
+        @include ms-screen-md-up {
+          @include ms-sm12;
+        }
+
+        @include ms-screen-lg-up {
+          @include ms-md10;
+          @include ms-lg10;
+          @include ms-xl10;
+          @include ms-smPush2;
+        }
+      }
+    }
+  }
+}
+
+:global(.ms-Label) {
+  &::after {
+    color: red;
+    font-weight: 600;
+  }
+}

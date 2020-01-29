@@ -1,0 +1,526 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "../../../scss/Index.module.scss";
+
+// VARIABLES LOCALES
+
+$assetPath : "https://ypf.sharepoint.com/sites/FormacionExternaEIdiomas-Test/SiteAssets/img/svg/";
+
+// MIXINS LOCALES
+
+@mixin SeteoTarjeta {
+  padding: 25px;
+  background-image: none !important;
+
+  &_row {
+    @include ms-Grid-row;
+
+    &_colLeft {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      right: 0;
+    }
+
+    &_colRight {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      text-align: left;
+      left: 0;
+    }
+
+  }
+
+  &_diasRestantes {
+    margin-bottom: 25px;
+
+    &_calendar {
+      display: inline-block;
+    }
+
+    &_texto {
+      display: inline-block;
+      color: $ms-color-neutralPrimaryAlt;
+      @include ms-fontSize-14;
+      margin-left: 10px;
+      width: inherit;
+    }
+  }
+
+  &_nombreFormacion {
+    @include ms-fontSize-18;
+    height: 60px;
+
+    &_ellipsis {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &_proveedorFormacion {
+    display: none;
+  }
+
+  &_usuario {
+    margin-bottom: 0;
+
+    &_nombre {
+      display: block;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    &_id {
+      display: inline-block;
+      margin-left: 0px;
+      margin-top: 5px;
+    }
+
+  }
+
+  &.warning {
+    .aprobaciones_cards_card_diasRestantes_calendar {
+      background-image: url('#{$assetPath}calendarRed.svg');
+      color: $ms-color-red;
+    }
+  }
+
+  &.alert {
+    .aprobaciones_cards_card_diasRestantes_calendar {
+      background-image: url('#{$assetPath}calendarYellow.svg');
+      color: $ms-color-yellow;
+    }
+  }
+
+  &.ok {
+    .aprobaciones_cards_card_diasRestantes_calendar {
+      background-image: url('#{$assetPath}calendarGreen.svg');
+      color: $ms-color-green;
+    }
+  }
+}
+
+// ESTILOS COMPONENTE RECORDATORIO
+
+.contenedorRecordatorio {
+  @include ms-Grid-col;
+  @include ms-sm12;
+  padding: 0 0 30px 123px;
+}
+
+@include ms-screen-xl-down {
+  .contenedorRecordatorio {
+    padding: 0 0 30px 90px;
+  }
+}
+
+@include ms-screen-sm-down {
+  .contenedorRecordatorio {
+    padding: 0 15px 30px;
+  }
+}
+
+// COMIENZO DE ESTILOS PARA LA PAGINA DE APROBACIONES
+
+.aprobaciones {
+
+  background-position: center 0;
+  background-repeat: no-repeat;
+
+  &_container {
+    @include Container;
+  }
+
+  &_pageHeader {
+
+    padding: 10px 0 38px;
+
+    &_row {
+      display: table;
+      width: 100%;
+
+      &_colLeft {
+        display: table-cell;
+        width: 600px;
+        @include ms-fontSize-42;
+        font-weight: 300;
+      }
+
+      &_colRight {
+        display: table-cell;
+        width: calc(100% - 600px);
+        vertical-align: bottom;
+      }
+
+    }
+
+    &_aprobacionesPendientes {
+      color: $ms-color-white;
+      background-color: $ms-color-red;
+      padding: 0 5px;
+      border-radius: 10px;
+      display: inline;
+    }
+
+    &_visualizacion {
+      display: table;
+      float: right;
+
+      &_col {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      &_texto {
+        margin-right: 10px;
+      }
+
+      &_select {
+        margin-right: 10px;
+      }
+
+      &_separacion {
+        border-left: 1px solid;
+        border-color: $ms-color-neutralSecondaryAlt;
+        height: 20px;
+        width: 1px;
+        margin: 0 15px 0 5px;
+      }
+
+      &_cards,
+      &_rows {
+        background-position: top center;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      :global(.ms-Dropdown-container) {
+        width: inherit;
+      }
+
+    }
+
+  }
+
+  &_cards {
+    @include ms-Grid-row;
+
+    &_col {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      padding-bottom: 30px;
+
+      &.tarjetas {
+        @include ms-Grid-col;
+        @include ms-sm12;
+        @include ms-lg6;
+        @include ms-xl4;
+        @include ms-xxl3;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .aprobaciones_cards_card {
+          @include SeteoTarjeta;
+        }
+      }
+
+      &.sinPendientes {
+        width: 100% !important;
+
+        .aprobaciones_cards_card {
+          background-color: rgba(255, 255, 255, 0.65);
+        }
+
+        .aprobaciones_cards_card_row_colLeft {
+          @include ms-Grid-col;
+          @include ms-sm12;
+          @include ms-lg12;
+          @include ms-xl7;
+          @include ms-xxl6;
+          right: 0;
+        }
+
+        .aprobaciones_cards_card_row_colRight {
+          @include ms-Grid-col;
+          @include ms-sm12;
+          @include ms-lg12;
+          @include ms-xl5;
+          @include ms-xxl6;
+          left: 0;
+          text-align: right;
+        }
+
+        .aprobaciones_cards_card_aviso {
+          @include ms-fontSize-68;
+          font-weight: 300;
+
+          &_img {
+            width: 37%;
+            margin-top: 16px;
+          }
+        }
+
+        .aprobaciones_cards_card_ilustracion {
+          padding: 0;
+        }
+
+      }
+    }
+
+    &_card {
+      @include Card;
+      padding: 35px;
+      background-position: top right;
+      background-repeat: no-repeat;
+      background-size: 170px;
+      cursor: pointer;
+
+      &_row {
+        @include ms-Grid-row;
+
+        &_colLeft {
+          @include ms-Grid-col;
+          @include ms-sm12;
+          @include ms-lg8;
+          @include ms-lgPull4;
+          @include ms-xl9;
+          @include ms-xlPull3;
+          @include ms-xxl10;
+          @include ms-xxlPull2;
+        }
+
+        &_colRight {
+          @include ms-Grid-col;
+          @include ms-sm12;
+          @include ms-lg4;
+          @include ms-lgPush8;
+          @include ms-xl3;
+          @include ms-xlPush9;
+          @include ms-xxl2;
+          @include ms-xxlPush10;
+          text-align: right;
+        }
+
+      }
+
+      &_nombreFormacion {
+
+        color: $ms-color-themeDarkAlt;
+        @include ms-fontSize-32;
+        font-weight: bold;
+        margin-bottom: 5px;
+
+      }
+
+      &_proveedorFormacion {
+
+        color: $ms-color-neutralTertiary;
+        @include ms-fontSize-24;
+        margin-bottom: 12px;
+
+      }
+
+      &_usuario {
+
+        margin-bottom: 12px;
+
+        &_nombre {
+          display: inline-block;
+        }
+
+        &_id {
+          display: inline-block;
+          @include ms-fontSize-12;
+          background-color: $ms-color-neutralSecondary;
+          border-radius: 20px;
+          padding: 1px 6px 1px;
+          color: $ms-color-white;
+          margin-left: 6px;
+        }
+
+      }
+
+      &_diasRestantes {
+        color: $ms-color-white;
+        display: inline-block;
+
+        &_calendar {
+          background-position: top center;
+          background-repeat: no-repeat;
+          background-size: 26px;
+          background-image: url('#{$assetPath}calendarWhite.svg');
+          width: 27px;
+          height: 30px;
+          text-align: center;
+          padding-top: 9px;
+          margin-bottom: 8px;
+        }
+
+        &_texto {
+          text-transform: uppercase;
+          width: 85px;
+          text-align: left;
+          @include ms-fontSize-10;
+        }
+
+      }
+
+      &.warning {
+        background-image: url('#{$assetPath}backgroundDiasRestantesRed.svg');
+      }
+
+      &.alert {
+        background-image: url('#{$assetPath}backgroundDiasRestantesYellow.svg');
+      }
+
+      &.ok {
+        background-image: url('#{$assetPath}backgroundDiasRestantesGreen.svg');
+      }
+
+    }
+  }
+
+  // MEDIA QUERIES
+
+  @include ms-screen-xl-up {
+    background-size: 1015px;
+
+    &_pageHeader {
+      &_visualizacion {
+        :global(.ms-Dropdown-container) {
+          width: 160px;
+        }
+      }
+    }
+
+  }
+
+  @include ms-screen-xxl-up {
+    background-size: 1305px;
+
+    &_pageHeader {
+      &_visualizacion {
+        :global(.ms-Dropdown-container) {
+          width: 230px;
+        }
+      }
+    }
+
+    &_cards {
+      &_col {
+        &.sinPendientes {
+          .aprobaciones_cards_card_aviso {
+            &_img {
+              width: 65%;
+              margin-top: 45px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include ms-screen-lg-down {
+
+    background: none !important;
+
+    &_pageHeader {
+
+      padding: 15px 0 25px;
+
+      &_row {
+        display: block;
+        width: 100%;
+
+        &_colLeft {
+          display: block;
+          width: inherit;
+          @include ms-fontSize-24;
+          margin-bottom: 20px;
+        }
+
+        &_colRight {
+          display: block;
+          width: inherit;
+          text-align: left;
+        }
+
+      }
+
+      &_visualizacion {
+        float: none;
+      }
+
+    }
+
+    &_cards {
+      &_col {
+        &.sinPendientes {
+          .aprobaciones_cards_card_aviso {
+            margin-bottom: 40px;
+
+            &_img {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &_card {
+        &_nombreFormacion {
+          @include ms-fontSize-24;
+        }
+
+        &_proveedorFormacion {
+          @include ms-fontSize-20;
+        }
+      }
+    }
+
+  }
+
+  @include ms-screen-sm-down {
+
+    &_pageHeader {
+      padding: 15px 10px 25px;
+
+      &_visualizacion {
+        &_separacion {
+          display: none;
+        }
+
+        &_cards,
+        &_rows {
+          display: none;
+        }
+      }
+
+    }
+
+    &_cards {
+
+      &_col {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        &.sinPendientes {
+          .aprobaciones_cards_card_aviso {
+            @include ms-fontSize-28;
+            @include ms-fontWeight-bold;
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      &_card {
+        @include SeteoTarjeta;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "aprobaciones-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/aprobaciones/AprobacionesWebPart.js",
+          "manifest": "./src/webparts/aprobaciones/AprobacionesWebPart.manifest.json"
+        }
+      ]
+    },
+    "solicitudes-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/solicitudes/SolicitudesWebPart.js",
+          "manifest": "./src/webparts/solicitudes/SolicitudesWebPart.manifest.json"
+        }
+      ]
+    },
+    "home-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/home/HomeWebPart.js",
+          "manifest": "./src/webparts/home/HomeWebPart.manifest.json"
+        }
+      ]
+    },
+    "aprobar-formacion-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/aprobarFormacion/AprobarFormacionWebPart.js",
+          "manifest": "./src/webparts/aprobarFormacion/AprobarFormacionWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AprobacionesWebPartStrings": "lib/webparts/aprobaciones/loc/{locale}.js",
+    "SolicitudesWebPartStrings": "lib/webparts/solicitudes/loc/{locale}.js",
+    "HomeWebPartStrings": "lib/webparts/home/loc/{locale}.js",
+    "AprobarFormacionWebPartStrings": "lib/webparts/aprobarFormacion/loc/{locale}.js"
+  }
+}

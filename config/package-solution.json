@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "yshare-client-side-solution",
+    "id": "1ec71bd5-1ff4-4171-92e5-d2a2f384a573",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/yshare.sppkg"
+  }
+}

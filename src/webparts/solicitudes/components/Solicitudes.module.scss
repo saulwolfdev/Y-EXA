@@ -1,0 +1,531 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "../../../scss/Index.module.scss";
+
+// COMIENZO DE ESTILOS PARA LA PAGINA DE SOLICITUDES
+
+.solicitudes {
+
+  background-position: center 0;
+  background-repeat: no-repeat;
+
+  &_container {
+    @include Container;
+  }
+
+  &_pageHeader {
+
+    padding: 10px 0 38px;
+
+    &_row {
+      display: table;
+      width: 100%;
+
+      &_colLeft {
+        display: table-cell;
+        width: 635px;
+        @include ms-fontSize-42;
+        font-weight: 300;
+      }
+
+      &_colRight {
+        display: table-cell;
+        width: calc(100% - 635px);
+        vertical-align: bottom;
+      }
+
+    }
+
+    &_visualizacion {
+      display: table;
+      float: right;
+
+      &_col {
+        display: table-cell;
+        vertical-align: middle;
+        padding-right: 10px;
+      }
+    }
+
+  }
+
+  &_cards {
+    @include ms-Grid-row;
+
+    &_col {
+      @include ms-Grid-col;
+      @include ms-sm12;
+      padding-bottom: 30px;
+    }
+
+    .sinSolicitudes {
+
+      .solicitudes_cards_card {
+        background-color: rgba(255, 255, 255, 0.65);
+      }
+
+      .solicitudes_cards_card_aviso {
+        @include ms-fontSize-68;
+        font-weight: 300;
+        margin-bottom: 40px;
+      }
+
+      .solicitudes_cards_card_ilustracion {
+        padding: 0;
+      }
+
+    }
+
+    &_card {
+      @include Card;
+      padding: 35px;
+
+      &_row {
+        @include ms-Grid-row;
+
+        &_colLeft {
+          @include ms-Grid-col;
+          @include ms-sm12;
+          @include ms-xl7;
+        }
+
+        &_colRight {
+          @include ms-Grid-col;
+          @include ms-sm12;
+          @include ms-xl5;
+          text-align: right;
+        }
+
+      }
+
+      &_nombreFormacion {
+
+        color: $ms-color-themeDarkAlt;
+        @include ms-fontSize-32;
+        font-weight: bold;
+        margin-bottom: 5px;
+
+      }
+
+      &_proveedorFormacion {
+
+        color: $ms-color-neutralTertiary;
+        @include ms-fontSize-24;
+        margin-bottom: 12px;
+
+      }
+
+      &_usuario {
+
+        margin-bottom: 12px;
+
+        &_nombre {
+          display: inline-block;
+        }
+
+        &_id {
+          display: inline-block;
+          @include ms-fontSize-12;
+          background-color: $ms-color-neutralSecondary;
+          border-radius: 20px;
+          padding: 1px 6px 1px;
+          color: $ms-color-white;
+          margin-left: 6px;
+        }
+
+      }
+
+      &_button {
+        margin: 2px 0 12px 0;
+      }
+
+      &_links {
+
+        margin: 0 0 12px 2px;
+
+        &_link {
+          color: $ms-color-themeDarkAlt;
+          @include ms-fontSize-12;
+          display: inline-block;
+        }
+
+        &_linkAlert {
+          color: $ms-color-red;
+          @include ms-fontSize-12;
+          display: inline-block;
+          padding-left: 10px;
+          margin-left: 10px;
+          border-left: 1px solid;
+          border-color: $ms-color-neutralQuaternary;
+        }
+
+      }
+
+      &_stepper {
+
+        margin-top: 20px;
+        display: table;
+
+        &_step {
+          width: 170px;
+          display: table-cell;
+
+          .marcador {
+            margin-bottom: 12px;
+
+            &_bullet {
+              width: 24px;
+              height: 24px;
+              border-radius: 100%;
+              border: 3px solid;
+              border-color: $ms-color-neutralLight;
+              display: inline-block;
+            }
+
+            &_raya {
+              width: calc(100% - 24px);
+              margin-bottom: 11px;
+              border-bottom: 1px solid;
+              border-color: $ms-color-neutralLight;
+              display: inline-block;
+            }
+          }
+
+          &:last-of-type {
+
+            .marcador {
+              &_raya {
+                border-bottom: 0px solid;
+              }
+            }
+
+          }
+
+          .etiqueta {
+            background-color: $ms-color-neutralLighter;
+            padding: 5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            @include ms-fontSize-14;
+            width: 115px;
+          }
+
+          .estado {
+            color: $ms-color-neutralTertiaryAlt;
+
+            &_fecha {
+              margin-bottom: 10px;
+            }
+
+            &_nombre {
+              text-transform: capitalize;
+              @include ms-fontWeight-bold;
+              margin-bottom: 10px;
+            }
+
+            &_ver {
+              @include ms-fontSize-12;
+              display: table;
+              margin-bottom: 12px;
+
+              &_text {
+                color: $ms-color-neutralSecondaryAlt;
+                text-transform: uppercase;
+                display: table-cell;
+                vertical-align: middle;
+              }
+
+              &_icon {
+                margin-right: 6px;
+                display: table-cell;
+                padding-left: 4px;
+              }
+
+            }
+          }
+
+          &.noIniciado {
+            .marcador {
+              &_bullet {
+                background-color: $ms-color-neutralQuaternary;
+              }
+            }
+
+            .estado {
+              display: none;
+            }
+          }
+
+
+          &.iniciado {
+            .marcador {
+              &_bullet {
+                background-color: $ms-color-themeDarkAlt;
+              }
+            }
+
+            .estado {
+              &_nombre {
+                color: $ms-color-themeDarkAlt;
+              }
+            }
+          }
+
+          &.aprobado {
+            .marcador {
+              &_bullet {
+                background-color: $ms-color-green;
+              }
+            }
+
+            .estado {
+              &_nombre {
+                color: $ms-color-green;
+              }
+            }
+          }
+
+          &.rechazado {
+            .marcador {
+              &_bullet {
+                background-color: $ms-color-red;
+              }
+            }
+
+            .estado {
+              &_nombre {
+                color: $ms-color-red;
+              }
+            }
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  // MEDIA QUERIES
+
+  @include ms-screen-xl-up {
+    background-size: 1015px;
+  }
+
+  @include ms-screen-xxl-up {
+    background-size: 1305px;
+  }
+
+  @include ms-screen-lg-down {
+
+    background: none !important;
+
+    &_pageHeader {
+
+      padding: 15px 0 25px;
+
+      &_row {
+        display: block;
+        width: 100%;
+
+        &_colLeft {
+          display: block;
+          width: inherit;
+          @include ms-fontSize-24;
+          margin-bottom: 20px;
+        }
+
+        &_colRight {
+          display: block;
+          width: inherit;
+          text-align: left;
+        }
+
+      }
+
+      &_visualizacion {
+        float: none;
+      }
+
+    }
+
+    &_cards {
+
+      &_card {
+
+        &_row {
+          &_colRight {
+            margin-bottom: 10px;
+            text-align: left;
+          }
+        }
+
+        &_nombreFormacion {
+          @include ms-fontSize-24;
+        }
+
+        &_proveedorFormacion {
+          @include ms-fontSize-20;
+        }
+
+        &_button {
+          margin: 6px 0 0px;
+          width: 100%;
+        }
+
+        &_stepper {
+
+          display: block;
+          margin-top: 22px;
+
+          &_step {
+            width: 100%;
+            display: block;
+
+            .marcador {
+
+              margin-top: 15px;
+              margin-bottom: 5px;
+
+            }
+
+            &:last-of-type {
+
+              .marcador {
+                &_raya {
+                  border-bottom-width: 1px;
+                }
+              }
+
+            }
+
+            &:first-of-type {
+
+              .marcador {
+                margin-top: 0;
+              }
+
+            }
+
+            .etiqueta {
+              margin: 0 0 5px 30px;
+            }
+
+            .estado {
+              margin: 0 0 5px 30px;
+
+              &_fecha {
+                margin-bottom: 5px;
+              }
+
+              &_nombre {
+                margin-bottom: 5px;
+              }
+            }
+
+            &.noIniciado {
+              .marcador {
+                &_raya {
+                  border-color: $ms-color-neutralQuaternary;
+                }
+              }
+            }
+
+            &.iniciado {
+              .marcador {
+                &_raya {
+                  border-color: $ms-color-themeDarkAlt;
+                }
+              }
+            }
+
+            &.aprobado {
+              .marcador {
+                &_raya {
+                  border-color: $ms-color-green;
+                }
+              }
+            }
+
+            &.rechazado {
+              .marcador {
+                &_raya {
+                  border-color: $ms-color-red;
+                }
+              }
+            }
+
+          }
+
+        }
+
+        .solicitudes_cards_card_button {
+          margin-top: 10px;
+        }
+
+      }
+
+    }
+  }
+
+  @include ms-screen-sm-down {
+
+    &_pageHeader {
+      padding: 15px 10px 25px;
+    }
+
+    &_cards {
+
+      .solicitudes_cards_col {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .sinSolicitudes {
+
+        .solicitudes_cards_card_aviso {
+          @include ms-fontSize-28;
+          @include ms-fontWeight-bold;
+          margin-bottom: 30px;
+        }
+  
+      }
+
+      &_card {
+        padding: 25px;
+
+        &_nombreFormacion {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+
+        &_proveedorFormacion {
+          display: none;
+        }
+
+        &_usuario {
+          margin-bottom: 0;
+
+          &_nombre {
+            display: block;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
+
+          &_id {
+            display: inline-block;
+            margin-left: 0px;
+            margin-top: 5px;
+          }
+
+        }
+      }
+
+    }
+  }
+
+}
