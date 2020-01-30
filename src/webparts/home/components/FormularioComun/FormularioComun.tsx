@@ -169,7 +169,7 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 												label="Moneda"
 												required={true}
 												disabled={this.props.disabled}
-												placeholder="Seleccioná..."
+												placeholder="Seleccioná una moneda..."
 												options={coinOption} />
 										</div>
 										<div className={styles.Form_Time_Duration_Value}>

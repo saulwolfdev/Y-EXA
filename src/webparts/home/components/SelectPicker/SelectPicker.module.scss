@@ -10,7 +10,7 @@
 
     &_Start {
       @include ms-Grid-col;
-      @include ms-md12;
+      @include ms-sm12;
 
       @include ms-screen-md-up {
         @include ms-lg6;
@@ -19,7 +19,7 @@
 
     &_End {
       @include ms-Grid-col;
-      @include ms-md12;
+      @include ms-sm12;
 
       @include ms-screen-md-up {
         @include ms-lg6;
@@ -28,7 +28,7 @@
 
     &_Limit {
       @include ms-Grid-col;
-      @include ms-md12;
+      @include ms-sm12;
     }
   }
 }

@@ -1,6 +1,10 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 @import "../../../../scss/Index.module.scss";
 
+.Panel {
+  @include Global;
+}
+
 .Form {
   width: 100%;
   font-family: 'DIN', Arial, sans-serif;
@@ -12,7 +16,7 @@
       @include ms-Grid-row;
 
       &_Line {
-        text-align: left;
+        position: relative;
 
         &:after {
           content: "";
@@ -22,7 +26,7 @@
           position: absolute;
           border-left: 1px solid #106ebe;
           top: 0;
-          left: 60px;
+          left: 8.3%;
           display: none !important;
 
           @include ms-screen-md-up {

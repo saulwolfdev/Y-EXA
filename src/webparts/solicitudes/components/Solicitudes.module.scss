@@ -146,6 +146,7 @@
           color: $ms-color-themeDarkAlt;
           @include ms-fontSize-12;
           display: inline-block;
+          cursor: pointer;
         }
 
         &_linkAlert {
@@ -156,6 +157,7 @@
           margin-left: 10px;
           border-left: 1px solid;
           border-color: $ms-color-neutralQuaternary;
+          cursor: pointer;
         }
 
       }

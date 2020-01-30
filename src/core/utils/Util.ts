@@ -66,23 +66,61 @@ export default class Util {
 			isOnline: true
 		};
 	}
-	
-
 	public GetSolicitud(): ISolicitud[] {
-		return this.GetNamesCourses().map((itemCourses)=>({
-			...itemCourses, estadosFlujo:[
+	const estados=[
+		[
+					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
+					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"RRHH", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"FORMACION", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"SAE",estado:"Espera",fechaAprobacion:new Date(),cancelable:false },
+					{id:uuid(),titulo:"CERTIFICADO", estado:"Espera",fechaAprobacion:new Date(),cancelable:false }
+			],
+					[
+					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
+					{id:uuid(),titulo:"JEFE",estado:"Rechazado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"RRHH", estado:" ",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"FORMACION", estado:" ",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:false },
+					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
+			],		[
 					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
 					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
 					{id:uuid(),titulo:"RRHH", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"FORMACION", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"SAE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:false },
+					{id:uuid(),titulo:"CERTIFICADO", estado:"Finalizado",fechaAprobacion:new Date(),cancelable:false }
+			],		[
+					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
+					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"RRHH", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"FORMACION", estado:"Rechazado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:false },
+					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
+			],		[
+					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
+					{id:uuid(),titulo:"JEFE",estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"RRHH", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
 					{id:uuid(),titulo:"FORMACION", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"SAE",estado:"Espera",fechaAprobacion:new Date(),cancelable:false },
+					{id:uuid(),titulo:"CERTIFICADO", estado:"Espera",fechaAprobacion:new Date(),cancelable:false }
+			],		[
+					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
+					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"RRHH", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"FORMACION", estado:" ",fechaAprobacion:new Date(),cancelable:true },
 					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:false },
 					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
 			]
+			];
+		return this.GetNamesCourses().map((itemCourses,index)=>({
+					...itemCourses, estadosFlujo:estados[index]
 		}));
 	}
 		public GetSteps(): IPaso[] {
 		return [
 			{id:uuid(),color:"#107c10",titulo:"Aprobado"},
+			{id:uuid(),color:"#107c10",titulo:"Finalizado"},
 			{id:uuid(),color:"#e81123",titulo:"Rechazado"},
 			{id:uuid(),color:"#e81123",titulo:"Cancelado"},
 			{id:uuid(),color:"#106ebe",titulo:"Cargado"},

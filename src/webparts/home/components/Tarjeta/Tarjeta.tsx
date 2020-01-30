@@ -37,8 +37,8 @@ export default class Tarjeta extends React.Component<ITarjetaProps, ITarjetaStat
 	private _onRenderFooterContent = () => {
 		return (
 			<Fragment>
-				<PrimaryButton onClick={this.saveDialog}>Save</PrimaryButton>
-				<DefaultButton style={{ marginLeft: 15 }} onClick={this._closeDialog}>Cancel</DefaultButton>
+				<PrimaryButton onClick={this.saveDialog}>Enviar solicitud</PrimaryButton>
+				<DefaultButton style={{ marginLeft: 15 }} onClick={this._closeDialog}>Cancelar</DefaultButton>
 			</Fragment>
 		);
 	}

@@ -31,7 +31,7 @@ const FormSelect_OrdenarPor: React.FunctionComponent = () => {
   );
 };
 export interface ISolicitudesProps {
-	
+
 }
 export interface ISolicitudesState{
 		itemsRequestCards:Array<ISolicitud>;
@@ -57,12 +57,12 @@ export default class Solicitudes extends React.Component<ISolicitudesProps,ISoli
 
   public render(): React.ReactElement<ISolicitudesProps> {
 
-    const backgroundForm:string = require("../../../img/svg/backgroundForm.svg");
+    const backgroundForm: string = require("../../../img/svg/backgroundForm.svg");
     return (
       <div className={styles.solicitudes} style={{ backgroundImage: `url(${backgroundForm})` }}>
 		
         <div className={styles.solicitudes_container}>
-		    <SolicitudesTextDefault/>
+          <SolicitudesTextDefault />
           <div className={styles.solicitudes_cards}>
 					{
 					(this.state.itemsRequestCards.length==0)?

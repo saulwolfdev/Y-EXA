@@ -32,9 +32,8 @@ export default class CargarCertificado extends React.Component<CargarCertificado
     private _onRenderFooterContent = () => {
         return (
             <Fragment>
-				
-                <PrimaryButton style={{ marginRight: 15 }} onClick={this._closeDialog}>Save</PrimaryButton>
-                <DefaultButton onClick={this._closeDialog} >Cancel</DefaultButton>
+                <PrimaryButton style={{ marginRight: 15 }} onClick={this._closeDialog}>Enviar certificado</PrimaryButton>
+                <DefaultButton onClick={this._closeDialog} >Cancelar</DefaultButton>
             </Fragment>
         );
     }
@@ -46,9 +45,13 @@ export default class CargarCertificado extends React.Component<CargarCertificado
         return (
 
             <div className={styles.CargarCertificado} onClick={this._showDialog}>
-                Cargar certificado de finalización
+
+                <PrimaryButton>
+                    Cargar certificado de finalización
+                </PrimaryButton>
+
                 <Panel
-                    headerText="Cargar certificado de finalización"
+                    headerText="Certificado de finalización"
                     isOpen={isDialogVisible}
                     onDismiss={this._closeDialog}
                     closeButtonAriaLabel="Cerrar"
@@ -57,9 +60,9 @@ export default class CargarCertificado extends React.Component<CargarCertificado
                     className={styles.CargarCertificado_Panel}
                 >
                     <Fragment>
-                        <div className={styles.CargarCertificado_Panel_Body}>
+                        <form className={styles.CargarCertificado_Panel_Form}>
                             panel
-                        </div>
+                        </form>
                     </Fragment>
                 </Panel>
             </div>

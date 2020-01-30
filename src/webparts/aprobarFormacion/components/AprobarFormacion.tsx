@@ -5,6 +5,7 @@ import FormularioComun from '../../home/components/FormularioComun/FormularioCom
 import { IInscripcion } from '../../../core/entidades/IInscripcion';
 import { PrimaryButton } from 'office-ui-fabric-react';
 import Util from '../../../core/utils/Util';
+import RechazarSolicitud from './RechazarSolicitud/RechazarSolicitud';
 
 export interface AprobarFormacionProps {
 
@@ -59,10 +60,7 @@ class AprobarFormacion extends React.Component<AprobarFormacionProps, AprobarFor
 											text="Aprobar"
 											className={styles.aprobarFormacion_cards_card_buttonGreen}
 										/>
-										<PrimaryButton
-											text="Rechazar"
-											className={styles.aprobarFormacion_cards_card_buttonRed}
-										/>
+										<RechazarSolicitud />
 										<PrimaryButton
 											text="Cancelar"
 											className={styles.aprobarFormacion_cards_card_buttonGrey}

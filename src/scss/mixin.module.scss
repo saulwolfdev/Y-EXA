@@ -41,14 +41,6 @@
       width: 600px !important;
     }
 
-    @include ms-screen-xl-up {
-      width: 600px !important;
-    }
-
-    @include ms-screen-xxl-up {
-      width: 600px !important;
-    }
-
   }
 
   :global(.ms-Panel-navigation) {
@@ -89,6 +81,10 @@
   :global(.ms-Panel-content) {
     padding-left: 20px;
     padding-right: 20px;
+
+    @include ms-screen-md-up {
+      padding-right: 50px;
+    }
   }
 
   :global(.ms-Panel-footerInner) {

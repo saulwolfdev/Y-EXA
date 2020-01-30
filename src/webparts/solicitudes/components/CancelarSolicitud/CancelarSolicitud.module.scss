@@ -2,17 +2,22 @@
 @import "../../../../scss/Index.module.scss";
 
 .CancelarSolicitud {
-    font-family: DIN, Arial, sans-serif !important;
-    @include ms-fontSize-14;
-    cursor: pointer;
-    color: $ms-color-themeDarkAlt;
+    display: inline-block;
+    font-family: 'DIN', Arial, sans-serif;
 
     &_Panel {
         @include Global;
 
-        &_Body {
+        &_Form {
+            @include Input;
             padding: 20px;
         }
     }
+}
 
+:global(.ms-Label) {
+    &::after {
+        color: red;
+        font-weight: 600;
+    }
 }

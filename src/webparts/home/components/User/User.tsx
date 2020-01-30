@@ -42,8 +42,8 @@ class User extends React.Component<UserProps, UserState> {
 	private _onRenderFooterContent = () => {
 		return (
 			<Fragment>
-				<PrimaryButton style={{ marginRight: 15 }} onClick={this._saveDialog}>Save</PrimaryButton>
-				<DefaultButton onClick={this._closeDialog} >Cancel</DefaultButton>
+				<PrimaryButton style={{ marginRight: 15 }} onClick={this._saveDialog}>Aplicar cambio</PrimaryButton>
+				<DefaultButton onClick={this._closeDialog} >Cancelar</DefaultButton>
 			</Fragment>
 		);
 	}

@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { Component, Fragment } from 'react';
 import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import styles from './CancelarSolicitud.module.scss';
+import styles from './RechazarSolicitud.module.scss';
 import { TextField, DefaultButton, PrimaryButton } from 'office-ui-fabric-react';
 
-export interface CancelarSolicitudProps {
+export interface RechazarSolicitudProps {
 
 }
 
-export interface CancelarSolicitudState {
+export interface RechazarSolicitudState {
     isDialogVisible: boolean;
 }
 
-export default class CancelarSolicitud extends React.Component<CancelarSolicitudProps, CancelarSolicitudState> {
+export default class RechazarSolicitud extends React.Component<RechazarSolicitudProps, RechazarSolicitudState> {
 
-    constructor(props: CancelarSolicitudProps) {
+    constructor(props: RechazarSolicitudProps) {
         super(props);
         this.state = {
             isDialogVisible: false,
@@ -32,7 +32,7 @@ export default class CancelarSolicitud extends React.Component<CancelarSolicitud
     private _onRenderFooterContent = () => {
         return (
             <Fragment>
-                <PrimaryButton style={{ marginRight: 15 }} onClick={this._closeDialog}>Enviar</PrimaryButton>
+                <PrimaryButton className={styles.RechazarSolicitud_ButtonRed} style={{ marginRight: 15 }} onClick={this._closeDialog}>Rechazar solicitud</PrimaryButton>
                 <DefaultButton onClick={this._closeDialog} >Cancelar</DefaultButton>
             </Fragment>
         );
@@ -43,25 +43,28 @@ export default class CancelarSolicitud extends React.Component<CancelarSolicitud
         const { isDialogVisible } = this.state;
 
         return (
-            <div className={styles.CancelarSolicitud} onClick={this._showDialog}>
+            <div className={styles.RechazarSolicitud} onClick={this._showDialog}>
                 
-                Cancelar solicitud
+                <PrimaryButton
+                    text="Rechazar"
+                    className={styles.RechazarSolicitud_ButtonRed}
+                />
 
                 <Panel
-                    headerText="Motivo de cancelación"
+                    headerText="Motivo de rechazo"
                     isOpen={isDialogVisible}
                     onDismiss={this._closeDialog}
                     closeButtonAriaLabel="Cerrar"
                     onRenderFooterContent={this._onRenderFooterContent}
                     isFooterAtBottom={true}
-                    className={styles.CancelarSolicitud_Panel}
+                    className={styles.RechazarSolicitud_Panel}
                 >
                     <Fragment>
-                        <form className={styles.CancelarSolicitud_Panel_Form}>
+                        <form className={styles.RechazarSolicitud_Panel_Form}>
                             <TextField
                                 multiline rows={3}
                                 label="Comentarios"
-                                placeholder="Por favor detallá el motivo de cancelación para tu solicitud."
+                                placeholder="Por favor detallá el motivo de rechazo para la solicitud de formación. Tu comentario podrá ser visto por el usuario."
                                 required
                             />
                         </form>
