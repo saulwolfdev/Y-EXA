@@ -21,6 +21,7 @@
         align-items: center;
         padding: 10px;
         padding-left: 0;
+
         &_CheckBox {
           @include ms-Grid-col;
           @include ms-lg3;
@@ -37,14 +38,15 @@
           }
         }
 
-      @include ms-screen-md-up {
-        justify-content: center;
-        align-items: center;
-      }
-	        @include ms-screen-lg-up {
-        justify-content: center;
-        align-items: center;
-      }
+        @include ms-screen-md-up {
+          justify-content: center;
+          align-items: center;
+        }
+
+        @include ms-screen-lg-up {
+          justify-content: center;
+          align-items: center;
+        }
 
       }
     }

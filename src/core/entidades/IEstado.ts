@@ -1,6 +1,8 @@
 export interface IEstado {
 	id:number;
-	titulo: string;
-	aprobado: boolean;
+	titulo:string;
+	estado:string;
+	cancelable:boolean;
 	fechaAprobacion: Date;
+
 } 

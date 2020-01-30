@@ -33,7 +33,7 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 		}
 	}
 
-	public handleTextFieldChange = (e: React.ChangeEvent<HTMLInputElement>, textValue?:any) => {
+	public handleTextFieldChange = (e: React.ChangeEvent<HTMLInputElement>, textValue?: any) => {
 		const newValue: IInscripcion = { ...this.props.inscripcion };
 		newValue[e.target.name] = textValue;
 		if (this.props.onFormChange) {
@@ -44,16 +44,9 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 	public render() {
 		const { inscripcion } = this.props;
 		const coinOption: IDropdownOption[] = [
-			{ key: 'fruitsHeader', text: 'Fruits', itemType: DropdownMenuItemType.Header },
-			{ key: 'apple', text: 'Apple' },
-			{ key: 'banana', text: 'Banana' },
-			{ key: 'orange', text: 'Orange', disabled: true },
-			{ key: 'grape', text: 'Grape' },
-			{ key: 'divider_1', text: '-', itemType: DropdownMenuItemType.Divider },
-			{ key: 'vegetablesHeader', text: 'Vegetables', itemType: DropdownMenuItemType.Header },
-			{ key: 'broccoli', text: 'Broccoli' },
-			{ key: 'carrot', text: 'Carrot' },
-			{ key: 'lettuce', text: 'Lettuce' }
+			{ key: 'pesos', text: 'Pesos' },
+			{ key: 'dolares', text: 'Dólares' },
+			{ key: 'euros', text: 'Euros' },
 		];
 		return (
 			<Fragment>
@@ -73,7 +66,7 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 							<div className={styles.Form_Titles_Inputs}>
 								<TextField
 									value={inscripcion.nombreFormacion}
-									label="Nombre  de la formación"
+									label="Nombre de la formación"
 									disabled={this.props.disabled}
 									required
 									onChange={this.handleTextFieldChange}
@@ -98,38 +91,37 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 									</div>
 								</div>
 								<div className={styles.Form_Titles_Cont_Line_Stepper_Title}>
-									<div className={styles.Form_Titles_Cont_Line_Stepper_Title_Text}>Datos de la institución/Proveedor</div>
+									<div className={styles.Form_Titles_Cont_Line_Stepper_Title_Text}>Datos de la institución / proveedor</div>
 								</div>
 							</div>
 							<div className={styles.Form_Titles_Inputs}>
-								<Label required={true}>Modalidad de cursada</Label>
-								<TextField 
+								<TextField
 									disabled={this.props.disabled}
 									value={inscripcion.nombreLugar}
 									onChange={this.handleTextFieldChange}
-									label="Nombre  del lugar" 
+									label="Nombre de la institución / proveedor"
 									name="nombreLugar"
 									required
 								/>
-								<TextField 
-									label="Email/Sitio web "
-									disabled={this.props.disabled} 
+								<TextField
+									label="Email / Sitio web "
+									disabled={this.props.disabled}
 									value={inscripcion.emailSitioWeb}
 									onChange={this.handleTextFieldChange}
-									name="emailSitioWeb" 
+									name="emailSitioWeb"
 									required
 								/>
-								<TextField 
+								<TextField
+									label="Teléfono"
 									disabled={this.props.disabled}
 									value={inscripcion.numeroTelefono}
 									onChange={this.handleTextFieldChange}
-									name="numeroTelefono" 
-									label="Telefono "
+									name="numeroTelefono"
 								/>
 								<ShowPanel show={!inscripcion.isOnline}>
-									<TextField 
-										label="Lugar de realización " 
-										disabled={this.props.disabled} 
+									<TextField
+										label="Lugar de realización"
+										disabled={this.props.disabled}
 										value={inscripcion.lugarRealizacion}
 										onChange={this.handleTextFieldChange}
 										name="lugarRealizacion"
@@ -148,7 +140,7 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 								</div>
 							</div>
 							<div className={styles.Form_Titles_Inputs}>
-								<SelectPicker  />
+								<SelectPicker />
 							</div>
 							<div className={styles.Form_Titles_Cont_Line_Stepper}>
 								<div className={styles.Form_Titles_Cont_Line_Stepper_Step}>
@@ -157,32 +149,36 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 									</div>
 								</div>
 								<div className={styles.Form_Titles_Cont_Line_Stepper_Title}>
-									<div className={styles.Form_Titles_Cont_Line_Stepper_Title_Text}>Fechas</div>
+									<div className={styles.Form_Titles_Cont_Line_Stepper_Title_Text}>Cursada, duración y costo</div>
 								</div>
 							</div>
 							<div className={styles.Form_Titles_Inputs}>
+								<Label className={styles.Form_Titles_Inputs_Label} required={true}>Días y horarios de cursada</Label>
 								<Days />
-							</div>
-							<div className={styles.Form_Time}>
-								<div className={styles.Form_Time_Duration}>
-									<div className={styles.Form_Time_Duration_Lapse}>
-										<TextField 
-										label="Duracion total " 
-										disabled={this.props.disabled}
-										required />
-									</div>
-									<div className={styles.Form_Time_Duration_Coin}>
-										<Dropdown
-											label="Moneda"
-											required={true}
-											disabled={this.props.disabled}
-											placeholder="Inicio" 
-											options={coinOption} />
-									</div>
-									<div className={styles.Form_Time_Duration_Value}>
-										<TextField label="Valor " 
-										disabled={this.props.disabled}
-										required />
+								<div className={styles.Form_Time}>
+									<div className={styles.Form_Time_Duration}>
+										<div className={styles.Form_Time_Duration_Lapse}>
+											<TextField
+												label="Duracion total"
+												disabled={this.props.disabled}
+												placeholder="Cantidad de horas"
+												required />
+										</div>
+										<div className={styles.Form_Time_Duration_Coin}>
+											<Dropdown
+												label="Moneda"
+												required={true}
+												disabled={this.props.disabled}
+												placeholder="Seleccioná..."
+												options={coinOption} />
+										</div>
+										<div className={styles.Form_Time_Duration_Value}>
+											<TextField
+												label="Valor"
+												disabled={this.props.disabled}
+												placeholder="Precio sin descuentos"
+												required />
+										</div>
 									</div>
 								</div>
 							</div>
@@ -196,20 +192,23 @@ export default class FormularioComun extends React.Component<FormularioComunProp
 									<div className={styles.Form_Titles_Cont_Line_Stepper_Title_Text}>Objetivo</div>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div className={styles.Form_Objetivo}>
-						<div className={styles.Form_Objetivo_Container}>
-							<div className={styles.Form_Objetivo_Container_Description}>
-								<TextField
-									multiline rows={3}
-									label="Motivo por que solicitas la formación "
-									disabled={this.props.disabled}
-									onChange={this._onChange}
-								/>
+							<div className={styles.Form_Titles_Inputs}>
+								<div className={styles.Form_Objetivo}>
+									<div className={styles.Form_Objetivo_Container}>
+										<div className={styles.Form_Objetivo_Container_Description}>
+											<TextField
+												multiline rows={3}
+												label="MOTIVO POR EL QUE SOLICITÁS LA FORMACIÓN"
+												disabled={this.props.disabled}
+												onChange={this._onChange}
+											/>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
+
 				</form>
 			</Fragment>);
 	}

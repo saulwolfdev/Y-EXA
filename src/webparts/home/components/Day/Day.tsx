@@ -94,10 +94,10 @@ class Day extends React.Component<IDayProps, IDayState> {
 							<div className={styles.Checkbox_Inputs_CheckBox_Container_DropBox}>
 								<ShowPanel show={this.state.isCheckboxSelected}>
 									<div className={styles.Checkbox_Inputs_CheckBox_Container_DropBox_Drop}>
-										<Dropdown placeholder="Inicio" options={hours} />
+										<Dropdown placeholder="Hora inicio" options={hours} />
 									</div>
 									<div className={styles.Checkbox_Inputs_CheckBox_Container_DropBox_Drop}>
-										<Dropdown placeholder="Final" options={hours} />
+										<Dropdown placeholder="Hora fin" options={hours} />
 									</div>
 								</ShowPanel>
 							</div>

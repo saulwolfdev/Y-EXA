@@ -42,11 +42,17 @@
           align-items: center;
           margin: 0;
 
+          &:first-of-type {
+            .Form_Titles_Cont_Line_Stepper_Step_Box,
+            .Form_Titles_Cont_Line_Stepper_Title_Text {
+              margin-top: 30px;
+            }
+          }
+
           &_Step {
             position: relative;
             z-index: 2000;
             background-color: #fff;
-            padding-top: 20px;
             @include ms-Grid-col;
             display: none;
 
@@ -57,7 +63,6 @@
             @include ms-screen-lg-up {
               @include ms-Grid-col;
               @include ms-md2;
-              @include ms-lg2;
               @include ms-xl2;
               display: block;
             }
@@ -87,19 +92,15 @@
           &_Title {
             @include ms-Grid-col;
             @include ms-sm12;
-            @include ms-md12;
             @include ms-lg10;
-            @include ms-xl10;
             position: relative;
             z-index: 2000;
             background-color: #fff;
-            padding-top: 20px;
 
             &_Text {
               color: $ms-color-themeDarkAlt;
               font-weight: 400;
               @include ms-fontSize-20;
-
             }
           }
         }
@@ -110,6 +111,7 @@
       @include ms-Grid-col;
       @include ms-sm12;
       @include Input;
+      margin-bottom: 35px;
 
       &_Label {
         @include Input;
@@ -118,8 +120,6 @@
       }
 
       &_Checkbox {
-        padding: 10px;
-        padding-left: 0;
         @include Checkbox;
       }
 
@@ -129,8 +129,6 @@
 
       @include ms-screen-lg-up {
         @include ms-md10;
-        @include ms-lg10;
-        @include ms-xl10;
         @include ms-smPush2;
       }
     }
@@ -138,72 +136,43 @@
 
   &_Time {
     @include ms-Grid;
+    padding: 0;
 
     &_Duration {
-      @include ms-Grid-col;
-      @include ms-sm12;
-      @include Input;
+      @include ms-Grid-row;
 
       &_Lapse {
         @include ms-Grid-col;
         @include ms-sm12;
-        @include ms-md12;
-        @include ms-lg12;
         @include Input;
       }
 
       &_Coin {
         @include ms-Grid-col;
         @include ms-sm12;
-        @include ms-md12;
         @include ms-lg6;
-        @include ms-xl6;
         @include Input;
       }
 
       &_Value {
         @include ms-Grid-col;
         @include ms-sm12;
-        @include ms-md12;
         @include ms-lg6;
-        @include ms-xl6;
         @include Input;
-      }
-
-      @include ms-screen-md-up {
-        @include ms-sm12;
-      }
-
-      @include ms-screen-lg-up {
-        @include ms-md10;
-        @include ms-lg10;
-        @include ms-xl10;
-        @include ms-smPush2;
       }
     }
   }
 
   &_Objetivo {
-    background-color: #fff;
-    width: 100%;
+    @include ms-Grid;
 
     &_Container {
-      @include ms-Grid;
-		padding: 0;
+      @include ms-Grid-row;
+
       &_Description {
         @include ms-Grid-col;
         @include ms-sm12;
-
-        @include ms-screen-md-up {
-          @include ms-sm12;
-        }
-
-        @include ms-screen-lg-up {
-          @include ms-md10;
-          @include ms-lg10;
-          @include ms-xl10;
-          @include ms-smPush2;
-        }
+        padding: 0;
       }
     }
   }

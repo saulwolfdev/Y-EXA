@@ -74,14 +74,16 @@
     @include ms-fontSize-20;
     color: $ms-color-themeDarkAlt;
     font-weight: 400;
-	@include ms-screen-md-up {
-	 @include ms-fontSize-24;
-	  padding-bottom: 15px;
-	}
-	@include ms-screen-md-up {
-		  @include ms-fontSize-32;
-		   padding-bottom: 30px;
-	}
+
+    @include ms-screen-md-up {
+      @include ms-fontSize-24;
+      padding-bottom: 15px;
+    }
+
+    @include ms-screen-md-up {
+      @include ms-fontSize-32;
+      padding-bottom: 30px;
+    }
   }
 
   :global(.ms-Panel-content) {
@@ -95,18 +97,22 @@
     z-index: 300;
   }
 }
-@mixin  Input {
-	   text-align: left;
-	  :global(.ms-Label){
-	  font-family: 'DIN', Arial, sans-serif;
-	  text-transform: uppercase;
-	  color:$ms-color-neutralTertiary;
-	   margin: 11px 0;
+
+@mixin Input {
+  text-align: left;
+
+  :global(.ms-Label) {
+    font-family: 'DIN', Arial, sans-serif;
+    text-transform: uppercase;
+    color: $ms-color-neutralTertiary;
+    margin: 15px 0 0;
   }
 }
+
 @mixin Checkbox {
-	 text-align: left;
-	:global(.ms-Checkbox-text){
-      font-family: 'DIN', Arial, sans-serif;
-	}
+  text-align: left;
+
+  :global(.ms-Checkbox-text) {
+    font-family: 'DIN', Arial, sans-serif;
+  }
 }

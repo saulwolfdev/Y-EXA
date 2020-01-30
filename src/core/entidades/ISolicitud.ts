@@ -7,5 +7,6 @@ export interface ISolicitud{
 	dayLimit:number;
 	userId:string;
 	userName:string;
+	
 	estadosFlujo: Array<IEstado>;
 }

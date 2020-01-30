@@ -6,6 +6,7 @@ import { IInscripcion } from "../entidades/IInscripcion";
 import { ISolicitud } from "../entidades/ISolicitud";
 import Day from "../../webparts/home/components/Day/Day";
 import { IEstado } from "../entidades/IEstado";
+import { IPaso } from "../entidades/IPaso";
 export default class Util {
 	constructor() {
 		this.tecnica = require("../../../src/img/svg/tecnica.svg");
@@ -70,13 +71,24 @@ export default class Util {
 	public GetSolicitud(): ISolicitud[] {
 		return this.GetNamesCourses().map((itemCourses)=>({
 			...itemCourses, estadosFlujo:[
-					{id:uuid(),titulo:"SOLICITUD", aprobado: true, fechaAprobacion:new Date() },
-					{id:uuid(),titulo:"JEFE", aprobado: false, fechaAprobacion:new Date() },
-					{id:uuid(),titulo:"RRHH", aprobado: true, fechaAprobacion:new Date() },
-					{id:uuid(),titulo:"FORMACION", aprobado: true, fechaAprobacion:new Date() },
-					{id:uuid(),titulo:"SAE", aprobado: false, fechaAprobacion:new Date() },
-					{id:uuid(),titulo:"CERTIFICADO", aprobado: true, fechaAprobacion:new Date() }
+					{id:uuid(),titulo:"SOLICITUD",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
+					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"RRHH", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"FORMACION", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
+					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:false },
+					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
 			]
-		}))
+		}));
 	}
+		public GetSteps(): IPaso[] {
+		return [
+			{id:uuid(),color:"#107c10",titulo:"Aprobado"},
+			{id:uuid(),color:"#e81123",titulo:"Rechazado"},
+			{id:uuid(),color:"#e81123",titulo:"Cancelado"},
+			{id:uuid(),color:"#106ebe",titulo:"Cargado"},
+			{id:uuid(),color:"#d0d0d0",titulo:"Espera"},
+			{id:uuid(),color:"#ffffff",titulo:" "}
+			];
+	}
+
 }

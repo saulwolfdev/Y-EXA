@@ -6,32 +6,27 @@
   padding: 0;
 
   &_Container {
-    // @include ms-Grid-row;
-	width: 100%;
+    @include ms-Grid-row;
+
     &_Start {
       @include ms-Grid-col;
       @include ms-md12;
-	  width: 100%;
+
       @include ms-screen-md-up {
         @include ms-lg6;
-        @include ms-xl6;
-        @include ms-xxl6;
       }
     }
 
     &_End {
       @include ms-Grid-col;
       @include ms-md12;
-     width: 100%;
+
       @include ms-screen-md-up {
         @include ms-lg6;
-        @include ms-xl6;
-        @include ms-xxl6;
       }
     }
 
     &_Limit {
-	  width: 100%;
       @include ms-Grid-col;
       @include ms-md12;
     }

@@ -10,27 +10,35 @@ import { IInscripcion } from "../../../../core/entidades/IInscripcion";
 // import styles from "./Tarjeta.module.scss";
 export interface CardProps {
 	item: ItemsCards;
-	inscripcion:IInscripcion;
+	inscripcion: IInscripcion;
 	onFormChange: (newValue: IInscripcion) => void;
 }
 
 export interface CardState {
-	
+
 }
 
 class Card extends React.Component<CardProps, CardState> {
 	constructor(props: CardProps) {
 		super(props);
 		this.state = {
-		
+
 		};
 	}
 	public render() {
 		const { category } = this.props.item;
-		let formulario = (category === "Idiomas") ? <FormularioExcepcion /> : 
-		<FormularioComun 
-		onFormChange={this.props.onFormChange}
-		inscripcion={this.props.inscripcion}/>;
+		let formulario = (category === "Idiomas") ?
+
+			<FormularioExcepcion
+				onFormChange={this.props.onFormChange}
+				inscripcion={this.props.inscripcion}
+			/> :
+
+			<FormularioComun
+				onFormChange={this.props.onFormChange}
+				inscripcion={this.props.inscripcion}
+			/>;
+
 		return (
 			<Fragment>
 				{formulario}

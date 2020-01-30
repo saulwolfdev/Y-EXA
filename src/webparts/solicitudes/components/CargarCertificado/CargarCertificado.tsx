@@ -32,6 +32,7 @@ export default class CargarCertificado extends React.Component<CargarCertificado
     private _onRenderFooterContent = () => {
         return (
             <Fragment>
+				
                 <PrimaryButton style={{ marginRight: 15 }} onClick={this._closeDialog}>Save</PrimaryButton>
                 <DefaultButton onClick={this._closeDialog} >Cancel</DefaultButton>
             </Fragment>

@@ -3,20 +3,20 @@ import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { DatePicker, DayOfWeek, IDatePickerStrings, mergeStyleSets } from 'office-ui-fabric-react';
 import styles from "./SelectPicker.module.scss";
 const DayPickerStrings: IDatePickerStrings = {
-	months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+	months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
 
-	shortMonths: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+	shortMonths: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
 
-	days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+	days: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
 
-	shortDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+	shortDays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
 
-	goToToday: 'Go to today',
-	prevMonthAriaLabel: 'Go to previous month',
-	nextMonthAriaLabel: 'Go to next month',
-	prevYearAriaLabel: 'Go to previous year',
-	nextYearAriaLabel: 'Go to next year',
-	closeButtonAriaLabel: 'Close date picker'
+	goToToday: 'Ir al día de hoy',
+	prevMonthAriaLabel: 'Ir al mes anterior',
+	nextMonthAriaLabel: 'Ir al mes siguiente',
+	prevYearAriaLabel: 'Ir al año anterior',
+	nextYearAriaLabel: 'Ir al año siguiente',
+	closeButtonAriaLabel: 'Cerrar'
 };
 
 export interface ISelectPickerState {
@@ -42,31 +42,30 @@ export default class SelectPicker extends React.Component<{}, ISelectPickerState
 						<DatePicker
 							label="Inicio"
 							isRequired={true}
-							
 							firstDayOfWeek={firstDayOfWeek}
 							strings={DayPickerStrings}
-							placeholder="Select a date..."
-							ariaLabel="Select a date"
+							placeholder="Seleccioná una fecha..."
+							ariaLabel="Seleccioná una fecha"
 						/>
 					</div>
 					<div className={styles.Select_Container_End}>
 						<DatePicker
-							label="Final"
+							label="Finalización"
 							isRequired={true}
 							firstDayOfWeek={firstDayOfWeek}
 							strings={DayPickerStrings}
-							placeholder="Select a date..."
-							ariaLabel="Select a date"
+							placeholder="Seleccioná una fecha..."
+							ariaLabel="Seleccioná una fecha"
 						/>
 					</div>
 					<div className={styles.Select_Container_Limit}>
 						<DatePicker
-							label="Limite"
+							label="Límite de inscripción"
 							isRequired={true}
 							firstDayOfWeek={firstDayOfWeek}
 							strings={DayPickerStrings}
-							placeholder="Select a date..."
-							ariaLabel="Select a date"
+							placeholder="Seleccioná una fecha..."
+							ariaLabel="Seleccioná una fecha"
 						/>
 					</div>
 				</div>
