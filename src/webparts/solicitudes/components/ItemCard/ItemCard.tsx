@@ -45,7 +45,8 @@ class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 	}
 
 	public render() {
-		const { courses, place, userId, userName } = this.props.item;
+		const { courses, place, userId,userName} = this.props.item;
+		
 		const estadoActual = this.getEstadoActual();
 		return (<Fragment>
 			<div className={styles.solicitudes_cards_col}>
@@ -56,7 +57,8 @@ class ItemCard extends React.Component<ItemCardProps, ItemCardState> {
 							<div className={styles.solicitudes_cards_card_proveedorFormacion}>{place}</div>
 							<div className={styles.solicitudes_cards_card_links}>
 								<div className={styles.solicitudes_cards_card_links_link}>Ver detalle de la solicitud</div>
-								<ShowPanel show={estadoActual.cancelable}>
+								
+								<ShowPanel show={estadoActual.cancelable && estadoActual.estado!=="Cancelado" && estadoActual.estado!=="Rechazado"}>
 									<div className={styles.solicitudes_cards_card_links_linkAlert}>
 										<CancelarSolicitud />
 									</div>

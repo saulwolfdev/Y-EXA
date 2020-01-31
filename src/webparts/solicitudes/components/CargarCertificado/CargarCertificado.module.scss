@@ -2,8 +2,7 @@
 @import "../../../../scss/Index.module.scss";
 
 .CargarCertificado {
-    display: inline-block;
-    font-family: 'DIN', Arial, sans-serif;
+    margin-top: 20px;
 
     &_Panel {
         @include Global;
@@ -11,6 +10,16 @@
         &_Form {
             @include Input;
             padding: 20px;
+        }
+    }
+
+    &_CommanBar {
+        margin: 5px 0;
+    }
+
+    @include ms-screen-sm-down {
+        &_Button {
+            width: 100%;
         }
     }
 }

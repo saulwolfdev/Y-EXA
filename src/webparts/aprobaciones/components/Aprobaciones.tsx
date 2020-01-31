@@ -1,10 +1,8 @@
 import * as React from 'react';
 import styles from './Aprobaciones.module.scss';
-import { Component, Fragment } from 'react';
 import Util from "../../../core/utils/Util";
 import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import { ICourses } from "../../../core/entidades/ICourses";
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import AprobacionHeader from "./AprobacionHeader/AprobacionHeader";
 import SinPendientes from "./SinPendientes/SinPendientes";
 import Aprobacion from "./Aprobacion/Aprobacion";
@@ -62,7 +60,7 @@ export default class Aprobaciones extends React.Component<IAprobacionesProps, IA
 						{(this.state.itemsCourses.length > 0) ? 
 						this.state.itemsCourses.map(itemCourse =>
 							<Aprobacion
-							
+								key={itemCourse.id}
 								itemCourse={itemCourse}
 								cardSelected={this.state.cardSelected}
 							/>) : <SinPendientes />}

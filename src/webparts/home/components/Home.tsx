@@ -1,8 +1,6 @@
 import * as React from 'react';
 import styles from './Home.module.scss';
 import { IHomeProps } from './IHomeProps';
-import { PanelType } from 'office-ui-fabric-react';
-import { Form } from '@pnp/sp/src/forms';
 import Util from '../../../core/utils/Util';
 import Tarjetas from "./Tarjetas/Tarjetas";
 import { ItemsCards } from '../../../core/entidades/ItemsCards';

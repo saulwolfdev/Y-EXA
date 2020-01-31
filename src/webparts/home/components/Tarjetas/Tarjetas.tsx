@@ -54,7 +54,7 @@ export default class Tarjetas extends React.Component<ITarjetaProps, ITarjetaSta
 								
 								{this.props.itemsCards.map(item =>
 									<div key={item.id} className={styles.Tarjetas_Row_Tarjeta_Container_Row_Box}>
-										<Tarjeta itemCard={item} />
+										<Tarjeta key={item.id} itemCard={item} />
 									</div>
 								)}
 							</div>

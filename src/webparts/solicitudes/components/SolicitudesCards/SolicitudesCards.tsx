@@ -22,7 +22,7 @@ class SolicitudesCards extends React.Component<SolicitudesCardsProps, Solicitude
 	public render() { 
 		return (
 		<Fragment>
-				{this.props.itemsRequestCards.map(item =><ItemCard item={item} itemsSteps={this.props.itemsSteps} />)}
+				{this.props.itemsRequestCards.map(item =><ItemCard key={item.id} item={item} itemsSteps={this.props.itemsSteps} />)}
 		</Fragment>);
 	}
 }

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Component, Fragment } from 'react';
+import {Fragment } from 'react';
 import styles from "../Aprobaciones.module.scss";
 export interface SinPendientesProps {
 

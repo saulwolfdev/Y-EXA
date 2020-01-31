@@ -1,13 +1,9 @@
 import * as React from "react";
 import { Fragment } from 'react';
 import { ItemsCards } from "../../../../core/entidades/ItemsCards";
-import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react/lib/Button';
-import { useConstCallback } from '@uifabric/react-hooks';
+import {  Panel, DefaultButton, PrimaryButton,} from 'office-ui-fabric-react';
 import Card from "../Card/Card";
-import uuid from 'react-uuid';
 import styles from "./Tarjeta.module.scss";
-import { OnChangeCallback } from "office-ui-fabric-react";
 import { IInscripcion } from "../../../../core/entidades/IInscripcion";
 export interface ITarjetaProps {
 	itemCard: ItemsCards;

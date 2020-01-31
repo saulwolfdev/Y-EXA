@@ -1,9 +1,6 @@
 import * as React from 'react';
-import { Component } from 'react';
 import { Fragment } from 'react';
-import { Panel } from 'office-ui-fabric-react/lib/Panel';
-import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react/lib/Button';
-import { TextField } from 'office-ui-fabric-react';
+import {  Panel, DefaultButton, PrimaryButton,TextField } from 'office-ui-fabric-react';
 import styles from "./User.module.scss";
 
 export interface UserProps {
