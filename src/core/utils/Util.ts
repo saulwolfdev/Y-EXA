@@ -1,5 +1,5 @@
 import { ItemsCards } from "../../core/entidades/ItemsCards";
-import {ICourses} from "../../core/entidades/ICourses";
+import { ICourses } from "../../core/entidades/ICourses";
 import { IDay } from "../../core/entidades/IDay";
 import uuid from 'react-uuid';
 import { IInscripcion } from "../entidades/IInscripcion";
@@ -26,14 +26,16 @@ export default class Util {
 	public tecnicaClick: string;
 	public superiorClick: string;
 	public postgradoClick: string;
+	
 	public GetItemsCards(): ItemsCards[] {
 		return [
-		{ id: uuid(), category: "Tecnica", title: "Curso técnico", iconUrl: this.tecnica, iconClickedUrl: this.tecnicaClick },
-		{ id: uuid(), category: "Idiomas", title: "Formación de idiomas", iconUrl: this.idiomas, iconClickedUrl: this.idiomasClick },
-		{ id: uuid(), category: "Superior", title: "Formación de nivel superior", iconUrl: this.superior, iconClickedUrl: this.superiorClick },
-		{ id: uuid(), category: "Postgrado", title: "Formación nivel postgrado", iconUrl: this.postgrado, iconClickedUrl: this.postgradoClick }
+			{ id: uuid(), category: "Tecnica", title: "Curso técnico", iconUrl: this.tecnica, iconClickedUrl: this.tecnicaClick },
+			{ id: uuid(), category: "Idiomas", title: "Formación de idiomas", iconUrl: this.idiomas, iconClickedUrl: this.idiomasClick },
+			{ id: uuid(), category: "Superior", title: "Formación de nivel superior", iconUrl: this.superior, iconClickedUrl: this.superiorClick },
+			{ id: uuid(), category: "Postgrado", title: "Formación nivel postgrado", iconUrl: this.postgrado, iconClickedUrl: this.postgradoClick }
 		];
 	}
+	
 	public GetDaysNames(): IDay[] {
 		return [
 			{ id: uuid(), day: 'Lunes' },
@@ -46,16 +48,17 @@ export default class Util {
 		];
 	}
 
-		public GetNamesCourses(): ICourses[] {
+	public GetNamesCourses(): ICourses[] {
 		return [
-			{ id: uuid(), courses: 'Desarrolador Full-stack',place:"Coderhouse", dayLimit: 1, userId: "SE21626", userName: "Saul Alejos Garay" },
-			{ id: uuid(), courses: 'Desarrolador Back-end',place:"Codigo Dojo", dayLimit: 2, userId: "SE34324", userName: "Mariano Gabiel Ayub" },
-			{ id: uuid(), courses: 'Desarrolador Front-end',place:"Educacion IT", dayLimit: 4, userId: "SE75655", userName: "Saul alejos garay" },
-			{ id: uuid(), courses: 'Analista Funcional',place:"Digital House", dayLimit: 6, userId: "SE66543", userName: "Martín Horacio García Begher" },
-			{ id: uuid(), courses: 'QA Tester', dayLimit: 1,place:"Acamica", userId: "SE67463", userName: "Nicolas Biglino" },
-			{ id: uuid(), courses: 'Arquitecto de software',place:"UTN", dayLimit: 8, userId: "SE87676", userName: "Pablo Fernandez Hinojosa" }
+			{ id: uuid(), courses: 'Desarrolador Full-stack', place: "Coderhouse", dayLimit: 1, userId: "SE21626", userName: "Saul Alejos Garay" },
+			{ id: uuid(), courses: 'Desarrolador Back-end', place: "Codigo Dojo", dayLimit: 2, userId: "SE34324", userName: "Mariano Gabiel Ayub" },
+			{ id: uuid(), courses: 'Desarrolador Front-end', place: "Educacion IT", dayLimit: 4, userId: "SE75655", userName: "Saul alejos garay" },
+			{ id: uuid(), courses: 'Analista Funcional', place: "Digital House", dayLimit: 6, userId: "SE66543", userName: "Martín Horacio García Begher" },
+			{ id: uuid(), courses: 'QA Tester', dayLimit: 1, place: "Acamica", userId: "SE67463", userName: "Nicolas Biglino" },
+			{ id: uuid(), courses: 'Arquitecto de software', place: "UTN", dayLimit: 8, userId: "SE87676", userName: "Pablo Fernandez Hinojosa" }
 		];
 	}
+	
 	public GetInscripcion(): IInscripcion {
 		return {
 			nombreFormacion: "Desarrollador Full-stack",
@@ -66,67 +69,69 @@ export default class Util {
 			isOnline: true
 		};
 	}
+	
 	public GetSolicitud(): ISolicitud[] {
-	const estados=[
-		[
-					{id:uuid(),titulo:"SOLICITUD1",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
-					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"RRHH", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"FORMACION", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"SAE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
+		const estados = [
+			[
+				{ id: uuid(), titulo: "SOLICITUD1", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "FORMACION", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "SAE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			],
-					[
-					{id:uuid(),titulo:"SOLICITUD2",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
-					{id:uuid(),titulo:"JEFE",estado:"Rechazado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"RRHH", estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"FORMACION", estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
-			],		[
-					{id:uuid(),titulo:"SOLICITUD3",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
-					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"RRHH", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"FORMACION", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"SAE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"CERTIFICADO", estado:"Finalizado",fechaAprobacion:new Date(),cancelable:false }
-			],		[
-					{id:uuid(),titulo:"SOLICITUD4",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
-					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"RRHH", estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"FORMACION", estado:"Rechazado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
-			],		[
-					{id:uuid(),titulo:"SOLICITUD5",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
-					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"RRHH", estado:"Cancelado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"FORMACION", estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
-			],		[
-					{id:uuid(),titulo:"SOLICITUD6",estado:"Cargado",fechaAprobacion:new Date(),cancelable:false},
-					{id:uuid(),titulo:"JEFE",estado:"Aprobado",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"RRHH", estado:"Espera",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"FORMACION", estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"SAE",estado:" ",fechaAprobacion:new Date(),cancelable:true },
-					{id:uuid(),titulo:"CERTIFICADO", estado:" ",fechaAprobacion:new Date(),cancelable:false }
+			[
+				{ id: uuid(), titulo: "SOLICITUD2", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				{ id: uuid(), titulo: "JEFE", estado: "Rechazado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "RRHH", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+			], [
+				{ id: uuid(), titulo: "SOLICITUD3", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "FORMACION", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "SAE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "CERTIFICADO", estado: "Finalizado", fechaAprobacion: new Date(), cancelable: false }
+			], [
+				{ id: uuid(), titulo: "SOLICITUD4", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "FORMACION", estado: "Rechazado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+			], [
+				{ id: uuid(), titulo: "SOLICITUD5", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "RRHH", estado: "Cancelado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+			], [
+				{ id: uuid(), titulo: "SOLICITUD6", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "RRHH", estado: "Espera", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			]
-			];
-		return this.GetNamesCourses().map((itemCourses,index)=>({
-					...itemCourses, estadosFlujo:estados[index]
+		];
+		return this.GetNamesCourses().map((itemCourses, index) => ({
+			...itemCourses, estadosFlujo: estados[index]
 		}));
 	}
-		public GetSteps(): IPaso[] {
+	
+	public GetSteps(): IPaso[] {
 		return [
-			{id:uuid(),color:"#107c10",titulo:"Aprobado"},
-			{id:uuid(),color:"#107c10",titulo:"Finalizado"},
-			{id:uuid(),color:"#e81123",titulo:"Rechazado"},
-			{id:uuid(),color:"#e81123",titulo:"Cancelado"},
-			{id:uuid(),color:"#106ebe",titulo:"Cargado"},
-			{id:uuid(),color:"#d0d0d0",titulo:"Espera"},
-			{id:uuid(),color:"#ffffff",titulo:" "}
-			];
+			{ id: uuid(), color: "#107c10", titulo: "Aprobado" },
+			{ id: uuid(), color: "#107c10", titulo: "Finalizado" },
+			{ id: uuid(), color: "#e81123", titulo: "Rechazado" },
+			{ id: uuid(), color: "#e81123", titulo: "Cancelado" },
+			{ id: uuid(), color: "#106ebe", titulo: "Cargado" },
+			{ id: uuid(), color: "#d0d0d0", titulo: "Espera" },
+			{ id: uuid(), color: "#ffffff", titulo: " " }
+		];
 	}
 
 }

@@ -2,9 +2,7 @@
 @import "../../../scss/Index.module.scss";
 
 .Home {
-
-  background-position: center 0;
-  background-repeat: no-repeat;
+  margin: 0;
 
   &_Container {
     @include Container;
@@ -26,21 +24,6 @@
       @include ms-xl5;
       @include ms-xxl6;
     }
-  }
-
-
-  // MEDIA QUERIES
-
-  @include ms-screen-xl-up {
-    background-size: 1015px;
-  }
-
-  @include ms-screen-xxl-up {
-    background-size: 1305px;
-  }
-
-  @include ms-screen-lg-down {
-    background: none !important;
   }
 
 }

@@ -1,20 +1,26 @@
 @import '~office-ui-fabric-react/dist/sass/References.scss';
 @import "../../../../scss/Index.module.scss";
 
-.User{
-	font-family: DIN,Arial,sans-serif!important;
-	  @include ms-fontSize-14;
-	  cursor: pointer;
-	  color: $ms-color-themeDarkAlt;
-	  &_Panel{
-		  text-align: inherit;
-		  @include Global;
-	  }
-	
-	&_SelectUser {
-		width: 100%;
-		font-family: 'DIN', Arial, sans-serif;
-		padding: 20px;
-		@include Input;
-	}
+.User {
+    font-family: DIN, Arial, sans-serif !important;
+    @include ms-fontSize-14;
+    cursor: pointer;
+	color: $ms-color-themeDarkAlt;
+	transition: all 0.3s ease-out;
+
+    &:hover {
+        color: $ms-color-themeDarker;
+    }
+
+    &_Panel {
+        text-align: inherit;
+        @include Global;
+    }
+
+    &_SelectUser {
+        width: 100%;
+        font-family: 'DIN', Arial, sans-serif;
+        padding: 20px;
+        @include Input;
+    }
 }

@@ -1,0 +1,30 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import "../../../scss/Index.module.scss";
+
+.AnimacionesHome {
+  position: absolute;
+}
+
+// MEDIA QUERIES
+
+@include ms-screen-xl-up {
+  .AnimacionesHome {
+    left: calc(50% - 507.5px);
+    width: 1015px;
+    height: 443px;
+  }
+}
+
+@include ms-screen-xxl-up {
+  .AnimacionesHome {
+    left: calc(50% - 652.5px);
+    width: 1305px;
+    height: 570px;
+  }
+}
+
+@include ms-screen-lg-down {
+  .AnimacionesHome {
+    display: none;
+  }
+}

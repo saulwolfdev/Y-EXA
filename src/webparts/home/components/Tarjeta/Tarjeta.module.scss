@@ -33,6 +33,7 @@
         line-height: 24px;
         color: $ms-color-themeDarkAlt;
         @include ms-fontWeight-semibold;
+        transition: all 0.3s ease-out;
       }
     }
   }
@@ -49,7 +50,11 @@
     box-shadow: 0 0 34px rgba(0, 0, 0, .4);
 
     .Card_Container_Icon_img {
-      width: 137px;
+      width: 138px;
+    }
+
+    .Card_Container_Title_Text {
+      color: $ms-color-themeDark;
     }
   }
 
