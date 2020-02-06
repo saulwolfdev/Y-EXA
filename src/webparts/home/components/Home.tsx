@@ -5,6 +5,7 @@ import Util from '../../../core/utils/Util';
 import Tarjetas from "./Tarjetas/Tarjetas";
 import { ItemsCards } from '../../../core/entidades/ItemsCards';
 import AnimacionesHome from '../../../core/components/EXA_Animaciones/AnimacionesHome';
+import AnimacionesSinPendientes from '../../../core/components/EXA_Animaciones/AnimacionesSinPendientes';
 import { Recordatorio_CertificadoPendiente } from '../../../core/components/EXA_Recordatorio/Recordatorio';
 
 export interface IHomeState {

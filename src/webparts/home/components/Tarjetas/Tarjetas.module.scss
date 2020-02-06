@@ -78,6 +78,8 @@
             @include ms-md6;
             padding-right: 22px;
             padding-bottom: 25px;
+			// opacity: 0;
+			// visibility: hidden;
           }
         }
       }
@@ -103,4 +105,8 @@
     }
 
   }
+}
+.cardAnimation{
+		opacity: 0;
+	visibility: hidden;
 }

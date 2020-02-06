@@ -11,6 +11,7 @@ const SearchIcon = () => <Icon iconName="Search" />;
 
 // Import components
 import { Recordatorio_PlazoMaximo } from '../../../core/components/EXA_Recordatorio/Recordatorio';
+import AnimacionesSinPendientes from '../../../core/components/EXA_Animaciones/AnimacionesSinPendientes';
 
 export interface IAprobacionesProps {
 
@@ -49,7 +50,7 @@ export default class Aprobaciones extends React.Component<IAprobacionesProps, IA
 		const backgroundForm: string = require("../../../img/svg/backgroundForm.svg");
 		return (
 			<div className={styles.aprobaciones} style={{ backgroundImage: `url(${backgroundForm})` }}>
-
+				
 				<div className={styles.aprobaciones_container}>
 					<AprobacionHeader
 						cardSelected={this.state.cardSelected}

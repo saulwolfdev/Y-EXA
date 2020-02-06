@@ -7,6 +7,9 @@ import { Fragment } from 'react';
 import DefaultUserTitle from '../DefaultUserTitle/DefaultUserTitle';
 import CustomUserTitle from '../CustomUserTitle/CustomUserTitle';
 
+import gsap from 'gsap';
+import { TweenMax, Expo, TimelineMax, TimelineLite, CSSPlugin } from "gsap/all";
+
 export interface ITarjetaProps {
 	itemsCards: ItemsCards[];
 }
@@ -23,7 +26,11 @@ export default class Tarjetas extends React.Component<ITarjetaProps, ITarjetaSta
 		};
 		this._handleUserSave = this._handleUserSave.bind(this);
 		this._handleButtonClick = this._handleButtonClick.bind(this);
+		this.cardsRefs=[];
 	}
+
+	private cardsRefs:Array<any>;
+
 
 	private _handleUserSave(userValue: string) {
 		this.setState({ userValue });
@@ -32,6 +39,11 @@ export default class Tarjetas extends React.Component<ITarjetaProps, ITarjetaSta
 		this.setState({
 			userValue: ""
 		});
+	}
+	 public componentDidMount(){
+		let tl = gsap.timeline({ paused: false });
+		   tl.to(this.cardsRefs,{duration:1,stagger: 0.1,utoAlpha: 1, y: -20 });
+		   tl.play();
 	}
 	public render() {
 		return (
@@ -48,12 +60,16 @@ export default class Tarjetas extends React.Component<ITarjetaProps, ITarjetaSta
 						(!this.state.userValue) ? <DefaultUserTitle /> : <CustomUserTitle user={this.state.userValue} />
 					}
 					
-					<div className={styles.Tarjetas_Row_Tarjeta}>
+	<div className={styles.Tarjetas_Row_Tarjeta}>
 						<div className={styles.Tarjetas_Row_Tarjeta_Container}>
 							<div className={styles.Tarjetas_Row_Tarjeta_Container_Row}>
 								
-								{this.props.itemsCards.map(item =>
-									<div key={item.id} className={styles.Tarjetas_Row_Tarjeta_Container_Row_Box}>
+								{this.props.itemsCards.map((item, index) =>
+									<div 
+									    key={item.id}
+										 className={styles.Tarjetas_Row_Tarjeta_Container_Row_Box}
+										 ref={div => this.cardsRefs[index] = div}
+										 >
 										<Tarjeta key={item.id} itemCard={item} />
 									</div>
 								)}

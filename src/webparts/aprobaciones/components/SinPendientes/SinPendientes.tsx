@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Fragment } from 'react';
 import styles from "../Aprobaciones.module.scss";
+import AnimacionesSinPendientes from '../../../../core/components/EXA_Animaciones/AnimacionesSinPendientes';
 export interface SinPendientesProps {
 
 }
@@ -10,7 +11,8 @@ const SinPendientes: React.SFC<SinPendientesProps> = () => {
     const ilustracionSinPendientesLeft: string = require("../../../../img/svg/ilustracionSinPendientesLeft.svg");
 	return (
 		<Fragment>
-			<div className={styles.aprobaciones_cards_col + ' ' + styles.sinPendientes}>
+			
+			 <div className={styles.aprobaciones_cards_col + ' ' + styles.sinPendientes}>
 				<div className={styles.aprobaciones_cards_card}>
 					<div className={styles.aprobaciones_cards_card_row}>
 						<div className={styles.aprobaciones_cards_card_row_colLeft}>
@@ -22,7 +24,8 @@ const SinPendientes: React.SFC<SinPendientesProps> = () => {
 							</div>
 						</div>
 						<div className={styles.aprobaciones_cards_card_row_colRight}>
-							<img alt='' src={ilustracionSinPendientesRight} />
+							{/* <img alt='' src={ilustracionSinPendientesRight} /> */}
+							<AnimacionesSinPendientes/>
 						</div>
 					</div>
 				</div>

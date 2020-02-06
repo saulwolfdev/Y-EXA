@@ -1,0 +1,73 @@
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import "../../../scss/Index.module.scss";
+
+.LibroIzquierdoHechado {
+  text-align: center;
+  position: relative;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+cursor: pointer;
+  &_Item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+	cursor: pointer;
+  }
+
+  &:hover &_Item:nth-child(4) {
+    transform: translateY(-80px);
+    opacity: 1;
+  }
+
+  &:hover &_Item:nth-child(3) {
+    transform: translateY(-60px);
+    opacity: .8;
+  }
+
+  &:hover &_Item:nth-child(2) {
+    transform: translateY(-40px);
+    opacity: .6;
+  }
+
+  &:hover &_Item:nth-child(1) {
+    transform: translateY(-20px);
+    opacity: .4;
+  }
+}
+
+.SvgSinPendientes {
+  margin: 0;
+  &_Container {
+    @include Container;
+
+    &_SinPendientes {
+      position: relative;
+
+      @include ms-screen-xl-up {
+        &_Svg {
+          left: calc(50% - 507.5px);
+          width: 1015px;
+          height: 443px;
+        }
+      }
+
+      @include ms-screen-xxl-up {
+        &_Svg {
+          left: calc(50% - 652.5px);
+          width: 1305px;
+          height: 570px;
+        }
+      }
+
+      @include ms-screen-lg-down {
+        &_Svg {
+          display: none;
+        }
+      }
+    }
+  }
+}

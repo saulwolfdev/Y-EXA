@@ -50,12 +50,12 @@ export default class Util {
 
 	public GetNamesCourses(): ICourses[] {
 		return [
-			{ id: uuid(), courses: 'Desarrolador Full-stack', place: "Coderhouse", dayLimit: 1, userId: "SE21626", userName: "Saul Alejos Garay" },
-			{ id: uuid(), courses: 'Desarrolador Back-end', place: "Codigo Dojo", dayLimit: 2, userId: "SE34324", userName: "Mariano Gabiel Ayub" },
-			{ id: uuid(), courses: 'Desarrolador Front-end', place: "Educacion IT", dayLimit: 4, userId: "SE75655", userName: "Saul alejos garay" },
-			{ id: uuid(), courses: 'Analista Funcional', place: "Digital House", dayLimit: 6, userId: "SE66543", userName: "Martín Horacio García Begher" },
-			{ id: uuid(), courses: 'QA Tester', dayLimit: 1, place: "Acamica", userId: "SE67463", userName: "Nicolas Biglino" },
-			{ id: uuid(), courses: 'Arquitecto de software', place: "UTN", dayLimit: 8, userId: "SE87676", userName: "Pablo Fernandez Hinojosa" }
+			// { id: uuid(), courses: 'Desarrolador Full-stack', place: "Coderhouse", dayLimit: 1, userId: "SE21626", userName: "Saul Alejos Garay" },
+			// { id: uuid(), courses: 'Desarrolador Back-end', place: "Codigo Dojo", dayLimit: 2, userId: "SE34324", userName: "Mariano Gabiel Ayub" },
+			// { id: uuid(), courses: 'Desarrolador Front-end', place: "Educacion IT", dayLimit: 4, userId: "SE75655", userName: "Saul alejos garay" },
+			// { id: uuid(), courses: 'Analista Funcional', place: "Digital House", dayLimit: 6, userId: "SE66543", userName: "Martín Horacio García Begher" },
+			// { id: uuid(), courses: 'QA Tester', dayLimit: 1, place: "Acamica", userId: "SE67463", userName: "Nicolas Biglino" },
+			// { id: uuid(), courses: 'Arquitecto de software', place: "UTN", dayLimit: 8, userId: "SE87676", userName: "Pablo Fernandez Hinojosa" }
 		];
 	}
 	
