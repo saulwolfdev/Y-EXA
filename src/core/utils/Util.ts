@@ -73,52 +73,52 @@ export default class Util {
 	public GetSolicitud(): ISolicitud[] {
 		const estados = [
 			[
-				{ id: uuid(), titulo: "SOLICITUD1", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
-				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "FORMACION", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "SAE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+				// { id: uuid(), titulo: "SOLICITUD1", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				// { id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "FORMACION", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "SAE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			],
 			[
-				{ id: uuid(), titulo: "SOLICITUD2", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
-				{ id: uuid(), titulo: "JEFE", estado: "Rechazado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "RRHH", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+				// { id: uuid(), titulo: "SOLICITUD2", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				// { id: uuid(), titulo: "JEFE", estado: "Rechazado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "RRHH", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			], [
-				{ id: uuid(), titulo: "SOLICITUD3", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
-				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "FORMACION", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "SAE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "CERTIFICADO", estado: "Finalizado", fechaAprobacion: new Date(), cancelable: false }
+				// { id: uuid(), titulo: "SOLICITUD3", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				// { id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "FORMACION", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "SAE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "CERTIFICADO", estado: "Finalizado", fechaAprobacion: new Date(), cancelable: false }
 			], [
-				{ id: uuid(), titulo: "SOLICITUD4", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
-				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "FORMACION", estado: "Rechazado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+				// { id: uuid(), titulo: "SOLICITUD4", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				// { id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "RRHH", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "FORMACION", estado: "Rechazado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			], [
-				{ id: uuid(), titulo: "SOLICITUD5", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
-				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "RRHH", estado: "Cancelado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+				// { id: uuid(), titulo: "SOLICITUD5", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				// { id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "RRHH", estado: "Cancelado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			], [
-				{ id: uuid(), titulo: "SOLICITUD6", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
-				{ id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "RRHH", estado: "Espera", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
-				{ id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
+				// { id: uuid(), titulo: "SOLICITUD6", estado: "Cargado", fechaAprobacion: new Date(), cancelable: false },
+				// { id: uuid(), titulo: "JEFE", estado: "Aprobado", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "RRHH", estado: "Espera", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "FORMACION", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titul       : "SAE", estado: " ", fechaAprobacion: new Date(), cancelable: true },
+				// { id: uuid(), titulo: "CERTIFICADO", estado: " ", fechaAprobacion: new Date(), cancelable: false }
 			]
 		];
 		return this.GetNamesCourses().map((itemCourses, index) => ({
-			...itemCourses, estadosFlujo: estados[index]
+			...itemCourses, estadosFlujo: estados[index] 
 		}));
 	}
 	
