@@ -9,7 +9,6 @@ import CancelarSolicitud from './CancelarSolicitud/CancelarSolicitud';
 import CargarCertificado from './CargarCertificado/CargarCertificado';
 import SolicitudesTextDefault from "./SolicitudesTextDefault/SolicitudesTextDefault";
 import SolicitudesDefaultLeyend from "./SolicitudesDefaultLeyend/SolicitudesDefaultLeyend";
-import AnimacionSolicitudes from "../../../core/components/EXA_Animaciones/AnimacionSolicitudes";
 import SolicitudesCards from "./SolicitudesCards/SolicitudesCards";
 import {ISolicitud} from "../../../core/entidades/ISolicitud";
 import {IPaso} from "../../../core/entidades/IPaso";
@@ -67,9 +66,7 @@ export default class Solicitudes extends React.Component<ISolicitudesProps,ISoli
           <div className={styles.solicitudes_cards}>
 					{
 					(this.state.itemsRequestCards.length==0)?
-					// 
-					<AnimacionSolicitudes/>
-					:
+					<SolicitudesDefaultLeyend/>:
 					<SolicitudesCards
 					 itemsRequestCards={this.state.itemsRequestCards}
 					 itemsSteps={this.state.itemsSteps}

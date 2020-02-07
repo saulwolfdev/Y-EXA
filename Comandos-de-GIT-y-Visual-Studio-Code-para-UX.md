@@ -2,6 +2,8 @@
 
 - <span style="background-color:yellow">npm run dev</span> (Pone a funcionar el servidor, luego de esto puedo abrir una ventana de navegador con el Workbench de la solución: https://ypf.sharepoint.com/sites/Y-DOC.Desa/_layouts/15/Workbench.aspx)
 
+- <span style="background-color:yellow">npm run local o gulp serve</span> también pueden servir
+
 - <span style="background-color:yellow">"CTRL + CC"</span> (Finaliza el servidor y deja de correr en memoria)
 
 - <span style="background-color:yellow">“CTRL + Ñ"</span> (Crea una nueva ventana de terminal)
