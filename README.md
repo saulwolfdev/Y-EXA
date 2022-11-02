@@ -7,6 +7,7 @@ This is where you include your WebPart documentation.
 ### Building the code
 
 ```bash
+instalar node en la version 10.19.0
 git clone the repo
 npm i
 npm i -g gulp
